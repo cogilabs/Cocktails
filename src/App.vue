@@ -7,7 +7,9 @@
       :key="x.name"
       :food-name="x.name"
       :food-desc="x.desc"
-      :is-favorite="x.favorite"/>
+      :is-favorite="x.favorite"
+      @toggle-favorite="receiveEmit"
+      />
   </div>
 </template>
 
@@ -33,6 +35,14 @@
             favorite: false }
         ]
       };
+    },
+    methods: {
+      receiveEmit(foodId) {
+        const foundFood = this.foods.find(
+          food => food.name === foodId
+        );
+        foundFood.favorite = !foundFood.favorite;
+      }
     }
   }
 </script>
