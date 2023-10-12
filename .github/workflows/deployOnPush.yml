@@ -20,5 +20,5 @@ jobs:
             put ./dist ./public_html/cocktailsNew
             rename ./public_html/cocktails ./public_html/cocktailsOld
             rename ./public_html/cocktailsNew ./public_html/cocktails
-            delete ./public_html/cocktailsOld
+            rmdir ./public_html/cocktailsOld
     
