@@ -18,6 +18,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           commands: |
             cd public_html/cocktails/
+            delete ./*
+            put ./dist/* .
             ls
     
     
