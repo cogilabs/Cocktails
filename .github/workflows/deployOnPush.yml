@@ -7,6 +7,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+      - name: export
+        run: export NVM_DIR="$HOME/.nvm"
       - name: Build
         run: npm install; npm run build
       - name: Deploy
