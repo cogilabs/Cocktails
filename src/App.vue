@@ -1,7 +1,12 @@
 <template>
     <cocktail-comp 
       v-for="x in ings"
-      v-bind:ing-name="x"/>
+      :key="x.name"
+      :ing-name="x.name"
+      :ing-bg="x.ingBg"
+      :is-selected="x.selected"
+      @toggle-selected="receiveEmit"
+    />
 </template>   
 
 <script>
@@ -37,7 +42,21 @@
             }            
           }
         }
-        this.ings = ingList;
+        for (const i in ingList) {
+          const newIng = {name: ingList[i], isSelected: false, ingBg: "#dde0e7"};
+          this.ings.push(newIng);
+        }
+      },
+      receiveEmit(ingId) {
+        let foundIng = this.ings.find(
+          ing => ing.name === ingId
+        );
+        foundIng.selected = !foundIng.selected;
+        if (foundIng.selected) {
+          foundIng.ingBg = "#edf2ff"
+        } else {
+          foundIng.ingBg = "#dde0e7"
+        }
       }
     }
   }
@@ -50,12 +69,10 @@
     font-family: Helvetica, Arial, sans-serif;
   }
   .ing {
-    border: solid #494c50 1px;
-    color: #9aa0a6;
+    color: #828589;
     width: 100px;
     padding: 10px;
     margin-top: 10px;
-    background-color: #e4ebff;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 10px;
     margin: 10px;
