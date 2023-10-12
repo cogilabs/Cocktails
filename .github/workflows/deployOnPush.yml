@@ -8,7 +8,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: export
-        run: export NVM_DIR="$HOME/.nvm"
+        run: export NVM_DIR="$HOME/.nvm";export PATH=$PATH:/home/0Davgi0/.nvm/versions/node/v18.18.1/bin/node;export PATH=$PATH:/home/0Davgi0/.nvm/versions/node/v18.18.1/bin/npm
       - name: Build
         run: npm install; npm run build
       - name: Deploy
