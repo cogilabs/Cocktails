@@ -10,12 +10,12 @@ jobs:
       - name: Build
         run: export NVM_DIR="$HOME/.nvm";export PATH=$PATH:/home/0Davgi0/.nvm/versions/node/v18.18.1/bin; npm install; npm run build
       - name: Deploy
-        uses: joutvhu/ftp-transfer@v1.0.0
+        uses: sand4rt/ftp-deployer@v1.7
         with:
           host: ${{ secrets.FTP_HOST }}
           port: 21
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          commands: |
-            put ./dist ./public_html/cocktails
+          remote_folder: ./public_html/cocktails
+          cleanup: true
     
