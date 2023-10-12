@@ -7,7 +7,11 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+      - name: Install nvm
+        run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+      - name: Install npm
+        run: nvm install npm
       - name: Build
-        run: sudo apt install nodejs -y; npm install; npm run build
+        run: npm install; npm run build
       - name: Deploy
         run: cd ./dist; ls
