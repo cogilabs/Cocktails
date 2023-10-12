@@ -8,6 +8,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Build
-        run: sudo apt install node; nm install; npm run build
+        run: sudo apt install nodejs; nm install; npm run build
       - name: Deploy
         run: cd ./dist; ls
