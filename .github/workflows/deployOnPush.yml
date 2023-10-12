@@ -17,9 +17,8 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           commands: |
-            cd public_html/cocktails/
-            delete ./*
-            put ./dist/* .
-            ls
-    
+            put ./dist ./public_html/cocktailsNew
+            rename ./public_html/cocktails ./public_html/cocktailsOld
+            rename ./public_html/cocktailsNew ./public_html/cocktails
+            delete ./public_html/cocktailsOld
     
