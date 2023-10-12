@@ -7,8 +7,10 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+      - name: Install nvm
+        run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash ; source ~/.bashrc ; export NVM_DIR="$HOME/.nvm"
       - name: Install npm
-        run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash ; source ~/.bashrc ; nvm install npm
+        run: nvm install npm
       - name: Build
         run: npm install; npm run build
       - name: Deploy
