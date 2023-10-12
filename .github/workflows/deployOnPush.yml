@@ -8,6 +8,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Build
-        run: npm install; npm run build
+        run: ~/.nvm/versions/node/v16.20.2/bin/npm install; ~/.nvm/versions/node/v16.20.2/bin/npm run build
       - name: Deploy
         run: cd ./dist; ls
