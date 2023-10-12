@@ -7,7 +7,7 @@
         :ing-name="x.name"
         :ing-bg="x.ingBg"
         :ing-shade="x.ingShade"
-        :is-selected="x.selected"
+        :is-selected="x.isSelected"
         @toggle-selected="receiveEmit"
       />
     </div>
@@ -16,9 +16,11 @@
         v-for="x in cocktails"
         :key="x.name"
         :cocktail-name="x.name"
+        :cocktail-ingredients="x.ingredients"
+        :displayed="x.displayed"
       />
     </div>
-    <div class="third">
+    <div class="recipe">
 
     </div>
   </div>
@@ -41,7 +43,7 @@
         const json = await response.json();
         const ingList = new Array();
         for (const i in json) {
-          this.cocktails.push({name: i});
+          this.cocktails.push({name: i, ingredients: json[i].Ingredients});
           for (const j in json[i].Ingredients) {
             if (ingList.length) {
               let okToAdd = true;
@@ -66,13 +68,28 @@
         let foundIng = this.ings.find(
           ing => ing.name === ingId
         );
-        foundIng.selected = !foundIng.selected;
-        if (foundIng.selected) {
+        foundIng.isSelected = !foundIng.isSelected;
+        if (foundIng.isSelected) {
           foundIng.ingBg = "#edf2ff";
           foundIng.ingShade = "8px 12px"
         } else {
           foundIng.ingBg = "#dde0e7";
           foundIng.ingShade = "2px 6px"
+        }
+        this.listCocktails();
+      },
+      listCocktails() {
+        for (const i in this.cocktails) {
+          this.cocktails[i].displayed = false
+        }
+        for (const i in this.cocktails) {
+          for (const j in this.cocktails[i].ingredients) {
+            for (const k in this.ings) {
+              if (this.cocktails[i].ingredients[j] == this.ings[k].name && this.ings[k].isSelected == true) {
+                this.cocktails[i].displayed = true
+              }
+            }
+          }
         }
       }
     }
@@ -108,7 +125,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  .third {
+  .recipe {
     width: 30%;
     padding: 10px;
     display: flex;

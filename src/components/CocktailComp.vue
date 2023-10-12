@@ -1,14 +1,12 @@
 <template>
-  <div>
+  <div v-if="displayed">
     <h2>{{ cocktailName }}</h2>
   </div>
 </template>
 
 <script>
 export default {
-  props: [
-    'cocktailName'
-  ]
+  props: ['cocktailName', 'CocktailIngredients', 'displayed']
 }
 </script>
 
