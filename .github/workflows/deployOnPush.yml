@@ -17,6 +17,7 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           commands: |
+            rename ./public_html/cocktailsOld ./public_html/cocktailsNew
             put ./dist ./public_html/cocktailsNew
             rename ./public_html/cocktails ./public_html/cocktailsOld
             rename ./public_html/cocktailsNew ./public_html/cocktails
