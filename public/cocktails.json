@@ -1,6 +1,6 @@
 {
   "Mojito": {
-    "decription": "Description et recette du Mojito, '\n' permet un retour à la ligne.",
+    "decription": "<!--Description et recette du Mojito, '</br>' permet un retour à la ligne. Exemple :--> <h1>Le Mojito</h1></br>Pour préparer un Mojito, vous aurez besoin de :</br> - Rhum blanc</br> - Citron vert</br> - Sucre (brun de préférence)</br> - Feuilles de menthe</br> - Glace pilée</br> - Eau gazeuze",
     "Ingredients": [
       "Rhum blanc", 
       "Citron vert", 
@@ -48,7 +48,7 @@
     ]
   },
   "Whiskey in the jar": {
-    "decription": "Pêche mûre <i>ou</i> jus de pêche concentré\nSucre en poudre <i>ou</i> Sirop de pêche",
+    "decription": "Pêche mûre <i>ou</i> jus de pêche concentré</br>Sucre en poudre <i>ou</i> Sirop de pêche",
     "Ingredients": [
       "Whiskey bushmills", 
       "Pêche mûre", 
@@ -109,7 +109,7 @@
     "decription": "Description et recette de la Russe Blanche",
     "Ingredients": [
       "Vodka", 
-      "Liqueur de cafée", 
+      "Liqueur de café", 
       "Crème liquide entière"
     ]
   },
@@ -117,7 +117,7 @@
     "decription": "Description et recette de la Vodka de Noël",
     "Ingredients": [
       "Vodka", 
-      "Liqueur de cafée", 
+      "Liqueur de café", 
       "Coca", 
       "Crème liquide"
     ]

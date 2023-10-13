@@ -155,7 +155,7 @@
   }
   .fade-enter-from, .fade-leave-to {
     opacity: 0;
-    transform: translateY(-20px); /* Adjust the value as needed */
+    transform: translateY(-20px);
   }
   .fade-enter-to, .fade-leave-from {
     opacity: 1;
