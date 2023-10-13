@@ -121,6 +121,7 @@
     background-color: #aab3ce;
     color: #494c50;
     font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
   }
   .master {
     width: 100%;
@@ -129,42 +130,17 @@
     justify-content: space-around;
     height: 100vh;
   }
-  .ing {
-    width: 30%;
+  .ing, .cocktail, .details {
+    width: 33%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-  }
-  .ing > div {
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    height: fit-content
   }
   .cocktail {
     border-left: solid #494c50;
     border-right: solid #494c50;
-    width: 30%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
   }
-  .cocktail > div {
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    height: fit-content
-  }
-  .details {
-    width: 30%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .details > div {
-    width: 30%;
+  .ing > div, .cocktail > div, .details > div {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -174,16 +150,13 @@
   .fade-enter-active, .fade-leave-active {
     transition: opacity 0.7s, transform 0.7s;
   }
-
   .fade-leave-active {
     position: absolute;
   }
-
   .fade-enter-from, .fade-leave-to {
     opacity: 0;
     transform: translateY(-20px); /* Adjust the value as needed */
   }
-
   .fade-enter-to, .fade-leave-from {
     opacity: 1;
     transform: translateY(0);
