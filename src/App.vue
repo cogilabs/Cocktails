@@ -1,24 +1,32 @@
 <template>
   <div class="master">
     <div class="ing">
-      <ingredient-comp 
-        v-for="x in ings"
-        :key="x.name"
-        :ing-name="x.name"
-        :ing-bg="x.ingBg"
-        :ing-shade="x.ingShade"
-        :is-selected="x.isSelected"
-        @toggle-selected="receiveEmit"
-      />
+      <div>
+        <transition-group name="fade" mode="out-in">
+        <ingredient-comp 
+          v-for="x in ings"
+          :key="'ingredient-' + x.name"
+          :ing-name="x.name"
+          :ing-bg="x.ingBg"
+          :ing-shade="x.ingShade"
+          :is-selected="x.isSelected"
+          @toggle-selected="receiveEmit"
+        />
+        </transition-group>
+      </div>
     </div>
     <div class="cocktail">
-      <cocktail-comp 
-        v-for="x in cocktails"
-        :key="x.name"
-        :cocktail-name="x.name"
-        :cocktail-ingredients="x.ingredients"
-        :displayed="x.displayed"
-      />
+      <div>
+        <transition-group name="fade" mode="out-in">
+          <cocktail-comp 
+            v-for="x in filteredCocktails"
+            :key="'cocktail-' + x.name"
+            :cocktail-name="x.name"
+            :cocktail-ingredients="x.ingredients"
+            :displayed="x.displayed"
+          />
+        </transition-group>
+      </div>
     </div>
     <div class="details">
 
@@ -36,6 +44,11 @@
     },
     mounted() {
       this.fetchData();
+    },
+    computed: {
+      filteredCocktails() {
+        return this.cocktails.filter(cocktail => cocktail.displayed);
+      }
     },
     methods: {
       async fetchData() {
@@ -111,32 +124,71 @@
   }
   .master {
     width: 100%;
-    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 100vh;
+  }
+  .ing {
+    width: 30%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  .ing {
-    width: 30%;
+  .ing > div {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: fit-content
   }
   .cocktail {
     border-left: solid #494c50;
     border-right: solid #494c50;
     width: 30%;
-    padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
+  .cocktail > div {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: fit-content
+  }
   .details {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .details > div {
     width: 30%;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: fit-content
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity 0.7s, transform 0.7s;
+  }
+
+  .fade-leave-active {
+    position: absolute;
+  }
+
+  .fade-enter-from, .fade-leave-to {
+    opacity: 0;
+    transform: translateY(-20px); /* Adjust the value as needed */
+  }
+
+  .fade-enter-to, .fade-leave-from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-move {
+    transition: all 0.7s
   }
 </style>
