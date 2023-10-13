@@ -1,26 +1,34 @@
 <template>
   <div class="master">
     <div class="ing">
-      <ingredient-comp 
-        v-for="x in ings"
-        :key="x.name"
-        :ing-name="x.name"
-        :ing-bg="x.ingBg"
-        :ing-shade="x.ingShade"
-        :is-selected="x.isSelected"
-        @toggle-selected="receiveEmit"
-      />
+      <div>
+        <transition-group name="fade" mode="out-in">
+        <ingredient-comp 
+          v-for="x in ings"
+          :key="'ingredient-' + x.name"
+          :ing-name="x.name"
+          :ing-bg="x.ingBg"
+          :ing-shade="x.ingShade"
+          :is-selected="x.isSelected"
+          @toggle-selected="receiveEmit"
+        />
+        </transition-group>
+      </div>
     </div>
     <div class="cocktail">
-      <cocktail-comp 
-        v-for="x in cocktails"
-        :key="x.name"
-        :cocktail-name="x.name"
-        :cocktail-ingredients="x.ingredients"
-        :displayed="x.displayed"
-      />
+      <div>
+        <transition-group name="fade" mode="out-in">
+          <cocktail-comp 
+            v-for="x in filteredCocktails"
+            :key="'cocktail-' + x.name"
+            :cocktail-name="x.name"
+            :cocktail-ingredients="x.ingredients"
+            :displayed="x.displayed"
+          />
+        </transition-group>
+      </div>
     </div>
-    <div class="recipe">
+    <div class="details">
 
     </div>
   </div>
@@ -37,13 +45,22 @@
     mounted() {
       this.fetchData();
     },
+    computed: {
+      filteredCocktails() {
+        return this.cocktails.filter(cocktail => cocktail.displayed);
+      }
+    },
     methods: {
       async fetchData() {
         const response = await fetch("cocktails.json");
         const json = await response.json();
         const ingList = new Array();
         for (const i in json) {
-          this.cocktails.push({name: i, ingredients: json[i].Ingredients});
+          this.cocktails.push({
+            name: i, 
+            ingredients: json[i].Ingredients, 
+            displayed: true
+          });
           for (const j in json[i].Ingredients) {
             if (ingList.length) {
               let okToAdd = true;
@@ -61,7 +78,12 @@
           }
         }
         for (const i in ingList) {
-          this.ings.push({name: ingList[i], isSelected: false, ingBg: "#dde0e7", ingShade: "2px 6px"});
+          this.ings.push({
+            name: ingList[i], 
+            isSelected: false, 
+            ingBg: "#dde0e7", 
+            ingShade: "2px 6px"
+          });
         }
       },
       receiveEmit(ingId) {
@@ -79,17 +101,15 @@
         this.listCocktails();
       },
       listCocktails() {
-        for (const i in this.cocktails) {
-          this.cocktails[i].displayed = false
+        let checker = (arr, target) => target.every(v => arr.includes(v));
+        const selectedIngs = new Array();
+        for (const i in this.ings) {
+          if (this.ings[i].isSelected == true) {
+              selectedIngs.push(this.ings[i].name)
+          }
         }
         for (const i in this.cocktails) {
-          for (const j in this.cocktails[i].ingredients) {
-            for (const k in this.ings) {
-              if (this.cocktails[i].ingredients[j] == this.ings[k].name && this.ings[k].isSelected == true) {
-                this.cocktails[i].displayed = true
-              }
-            }
-          }
+          this.cocktails[i].displayed = checker(this.cocktails[i].ingredients, selectedIngs)
         }
       }
     }
@@ -104,32 +124,71 @@
   }
   .master {
     width: 100%;
-    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 100vh;
+  }
+  .ing {
+    width: 30%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  .ing {
-    width: 30%;
+  .ing > div {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: fit-content
   }
   .cocktail {
     border-left: solid #494c50;
     border-right: solid #494c50;
     width: 30%;
-    padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  .recipe {
+  .cocktail > div {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: fit-content
+  }
+  .details {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .details > div {
     width: 30%;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: fit-content
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity 0.7s, transform 0.7s;
+  }
+
+  .fade-leave-active {
+    position: absolute;
+  }
+
+  .fade-enter-from, .fade-leave-to {
+    opacity: 0;
+    transform: translateY(-20px); /* Adjust the value as needed */
+  }
+
+  .fade-enter-to, .fade-leave-from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-move {
+    transition: all 0.7s
   }
 </style>
