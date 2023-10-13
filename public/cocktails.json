@@ -1,17 +1,16 @@
 {
   "Mojito": {
-    "decription": "Description du Mojito",
+    "decription": "Description et recette du Mojito, '\n' permet un retour à la ligne.",
     "Ingredients": [
       "Rhum blanc", 
       "Citron vert", 
       "Sucre brun", 
       "Feuilles de menthe",
-      "Glace pilée",
       "Eau gazeuse"
     ]
   },
   "Piñacolada": {
-    "decription": "...",
+    "decription": "Description et recette de la Piñacolada",
     "Ingredients": [
       "Rhum blanc", 
       "Rhum ambré VO", 
@@ -20,7 +19,7 @@
     ]
   },
   "Mademoiselle": {
-    "decription": "...",
+    "decription": "Description et recette de la Mademoiselle",
     "Ingredients": [
       "Rhum arrangé", 
       "Liqueur de grenade", 
@@ -29,7 +28,7 @@
     ]
   },
   "Aloha vanille": {
-    "decription": "...",
+    "decription": "Description et recette de l'Aloha vanille",
     "Ingredients": [
       "Rhum ambré", 
       "jus d'orange", 
@@ -40,7 +39,7 @@
     ]
   },
   "Mai Tai": {
-    "decription": "...",
+    "decription": "Description et recette du Mai Tai",
     "Ingredients": [
       "Rhum blanc", 
       "Sirop d'orgeat", 
@@ -56,12 +55,11 @@
       "Jus de pêche concentré", 
       "Sucre en poudre",
       "Sirop de pêche",
-      "Feuilles de menthe",
-      "Glaçon"
+      "Feuilles de menthe"
     ]
   },
   "Elevenses": {
-    "decription": "...",
+    "decription": "Description et recette du Elevenses",
     "Ingredients": [
       "Whiskey Tullamore", 
       "Confiture de framboises", 
@@ -70,7 +68,7 @@
     ]
   },
   "Wapplesky": {
-    "decription": "...",
+    "decription": "Description et recette du Wapplesky",
     "Ingredients": [
       "Whiskey écossais", 
       "Jus de pomme", 
@@ -79,7 +77,7 @@
     ]
   },
   "Lynchburg Lemonade": {
-    "decription": "...",
+    "decription": "Description et recette de la Lynchburg Lemonade",
     "Ingredients": [
       "Whiskey Jack Daniel's", 
       "Jus de citron", 
@@ -88,29 +86,27 @@
     ]
   },
   "Sex on the beach": {
-    "decription": "...",
+    "decription": "Description et recette du Sex on the beach",
     "Ingredients": [
       "Vodka", 
       "Jus d'orange", 
       "Jus de cramberry", 
       "Shnaps",
-      "Orange",
-      "Glaçon"
+      "Orange"
     ]
   },
   "Frescesa": {
-    "decription": "...",
+    "decription": "Description et recette de la Frescesa",
     "Ingredients": [
       "Vodka", 
       "Citron vert", 
       "Pêche", 
       "Vanille",
-      "Menthe",
-      "Glace pilée"
+      "Menthe"
     ]
   },
   "Russe Blanche": {
-    "decription": "...",
+    "decription": "Description et recette de la Russe Blanche",
     "Ingredients": [
       "Vodka", 
       "Liqueur de cafée", 
@@ -118,13 +114,12 @@
     ]
   },
   "Vodka de Noël": {
-    "decription": "...",
+    "decription": "Description et recette de la Vodka de Noël",
     "Ingredients": [
       "Vodka", 
       "Liqueur de cafée", 
       "Coca", 
-      "Crème liquide",
-      "Glace pilée"
+      "Crème liquide"
     ]
   }
 }
