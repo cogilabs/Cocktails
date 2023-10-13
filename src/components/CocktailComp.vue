@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  props: ['cocktailName', 'CocktailIngredients', 'displayed']
+  props: ['cocktailName', 'cocktailIngredients', 'displayed']
 }
 </script>
 

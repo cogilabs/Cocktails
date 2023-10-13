@@ -2,7 +2,7 @@
   <div class="master">
     <div class="ing">
       <div>
-        <transition-group name="fade" mode="out-in">
+        <transition-group name="fade">
         <ingredient-comp 
           v-for="x in ings"
           :key="'ingredient-' + x.name"
@@ -17,7 +17,7 @@
     </div>
     <div class="cocktail">
       <div>
-        <transition-group name="fade" mode="out-in">
+        <transition-group name="fade">
           <cocktail-comp 
             v-for="x in filteredCocktails"
             :key="'cocktail-' + x.name"
@@ -29,7 +29,13 @@
       </div>
     </div>
     <div class="details">
-
+      <div>
+        <transition name="fade">
+        <details-comp 
+          :details="details"
+        />
+        </transition>
+      </div>
     </div>
   </div>
 </template>   
@@ -39,7 +45,8 @@
     data() {
       return {
         ings: [],
-        cocktails: []
+        cocktails: [],
+        details: "Hello world"
       };
     },
     mounted() {
@@ -135,6 +142,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: 100%;
+    overflow-y: auto;
   }
   .cocktail {
     border-left: solid #494c50;
