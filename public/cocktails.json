@@ -1,5 +1,6 @@
 {
     "Cocktail1": {
+        "decription": "This is a cocktail",
         "Ingredients": [
             "Ing1", 
             "Ing2", 
@@ -8,6 +9,7 @@
         ]
     },
     "Cocktail2": {
+        "decription": "This is another cocktail",
         "Ingredients": [
             "Ing1", 
             "Ing2", 
@@ -16,6 +18,7 @@
         ]
     },
     "Cocktail3": {
+        "decription": "This is a pretty cool cocktail",
         "Ingredients": [
             "Ing3", 
             "Ing4", 
