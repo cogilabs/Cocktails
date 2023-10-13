@@ -1,6 +1,6 @@
 <template>
   <div v-if="displayed">
-    <h2>{{ cocktailName }}</h2>
+    <h3>{{ cocktailName }}</h3>
   </div>
 </template>
 
@@ -14,12 +14,13 @@ export default {
   div {
     background-color: #dde0e7;
     box-shadow: 0 5px 6px 0 rgba(0,0,0,0.2);
-    color: #828589;
+    color: #494c50;
     width: 150px;
-    height: 70px;
+    height: fit-content;
     padding: 10px;
     margin-top: 10px;
     border-radius: 10px;
     margin: 10px;
+    text-align: center;
   }
 </style>

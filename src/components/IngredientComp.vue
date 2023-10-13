@@ -1,6 +1,6 @@
 <template>
   <div v-bind:style="{ backgroundColor: ingBg, boxShadow: '0 ' + ingShade + ' 0 rgba(0,0,0,0.2)' }" @click="toggleSelected">
-    <h2>{{ ingName }}</h2>
+    <h4>{{ ingName }}</h4>
   </div>
 </template>
 
@@ -17,13 +17,14 @@ export default {
 
 <style scoped>
   div {
-    color: #828589;
+    color: #494c50;
     width: 100px;
-    height: 70px;
+    height: fit-content;
     padding: 10px;
     margin-top: 10px;
     border-radius: 10px;
     margin: 10px;
+    text-align: center;
   }
   div:hover {
     cursor: pointer;
