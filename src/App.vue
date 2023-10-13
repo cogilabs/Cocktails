@@ -43,7 +43,11 @@
         const json = await response.json();
         const ingList = new Array();
         for (const i in json) {
-          this.cocktails.push({name: i, ingredients: json[i].Ingredients});
+          this.cocktails.push({
+            name: i, 
+            ingredients: json[i].Ingredients, 
+            displayed: true
+          });
           for (const j in json[i].Ingredients) {
             if (ingList.length) {
               let okToAdd = true;
@@ -61,7 +65,12 @@
           }
         }
         for (const i in ingList) {
-          this.ings.push({name: ingList[i], isSelected: false, ingBg: "#dde0e7", ingShade: "2px 6px"});
+          this.ings.push({
+            name: ingList[i], 
+            isSelected: false, 
+            ingBg: "#dde0e7", 
+            ingShade: "2px 6px"
+          });
         }
       },
       receiveEmit(ingId) {
@@ -80,9 +89,6 @@
       },
       listCocktails() {
         let checker = (arr, target) => target.every(v => arr.includes(v));
-        for (const i in this.cocktails) {
-          this.cocktails[i].displayed = false
-        }
         const selectedIngs = new Array();
         for (const i in this.ings) {
           if (this.ings[i].isSelected == true) {
@@ -90,10 +96,7 @@
           }
         }
         for (const i in this.cocktails) {
-          if (selectedIngs.length > 0) {
-            console.log(checker(this.cocktails[i].ingredients, selectedIngs))
-            this.cocktails[i].displayed = checker(this.cocktails[i].ingredients, selectedIngs)
-          }
+          this.cocktails[i].displayed = checker(this.cocktails[i].ingredients, selectedIngs)
         }
       }
     }
