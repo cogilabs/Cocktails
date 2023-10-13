@@ -20,7 +20,7 @@
         :displayed="x.displayed"
       />
     </div>
-    <div class="recipe">
+    <div class="details">
 
     </div>
   </div>
@@ -132,7 +132,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  .recipe {
+  .details {
     width: 30%;
     padding: 10px;
     display: flex;
