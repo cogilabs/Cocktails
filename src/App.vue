@@ -79,16 +79,20 @@
         this.listCocktails();
       },
       listCocktails() {
+        let checker = (arr, target) => target.every(v => arr.includes(v));
         for (const i in this.cocktails) {
           this.cocktails[i].displayed = false
         }
+        const selectedIngs = new Array();
+        for (const i in this.ings) {
+          if (this.ings[i].isSelected == true) {
+              selectedIngs.push(this.ings[i].name)
+          }
+        }
         for (const i in this.cocktails) {
-          for (const j in this.cocktails[i].ingredients) {
-            for (const k in this.ings) {
-              if (this.cocktails[i].ingredients[j] == this.ings[k].name && this.ings[k].isSelected == true) {
-                this.cocktails[i].displayed = true
-              }
-            }
+          if (selectedIngs.length > 0) {
+            console.log(checker(this.cocktails[i].ingredients, selectedIngs))
+            this.cocktails[i].displayed = checker(this.cocktails[i].ingredients, selectedIngs)
           }
         }
       }
