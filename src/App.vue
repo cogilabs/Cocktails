@@ -46,7 +46,7 @@
       return {
         ings: [],
         cocktails: [],
-        details: "Hello world"
+        details: "Cocktail details will soon be shown here"
       };
     },
     mounted() {
