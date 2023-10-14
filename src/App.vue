@@ -88,7 +88,7 @@
           this.ings.push({
             name: ingList[i], 
             isSelected: false, 
-            ingBg: "#dde0e7", 
+            ingBg: "#ede4d1", 
             ingShade: "2px 6px"
           });
         }
@@ -99,10 +99,10 @@
         );
         foundIng.isSelected = !foundIng.isSelected;
         if (foundIng.isSelected) {
-          foundIng.ingBg = "#edf2ff";
+          foundIng.ingBg = "#f4b126";
           foundIng.ingShade = "8px 12px"
         } else {
-          foundIng.ingBg = "#dde0e7";
+          foundIng.ingBg = "#ede4d1";
           foundIng.ingShade = "2px 6px"
         }
         this.listCocktails();
@@ -125,8 +125,10 @@
 
 <style>
   body {
-    background-color: #aab3ce;
-    color: #494c50;
+    background-image: url(https://cogilabs.eu/Images/Pinstripe2.png);
+    background-repeat: repeat;
+    background-color: #18222c;
+    color: #f4b126;
     font-family: Helvetica, Arial, sans-serif;
     margin: 0;
   }
@@ -146,8 +148,8 @@
     overflow-y: auto;
   }
   .cocktail {
-    border-left: solid #494c50;
-    border-right: solid #494c50;
+    border-left: solid #f4b126;
+    border-right: solid #f4b126;
   }
   .ing > div, .cocktail > div, .details > div {
     padding: 10px;

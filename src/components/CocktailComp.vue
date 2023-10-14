@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
   div {
-    background-color: #dde0e7;
+    background-color: #ede4d1;
     box-shadow: 0 5px 6px 0 rgba(0,0,0,0.2);
     color: #494c50;
     width: 150px;
