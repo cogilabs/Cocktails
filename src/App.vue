@@ -76,6 +76,10 @@
             description: json[i].description,
             displayed: true
           });
+          this.cocktails.sort((a, b) => {
+            console.log(a.name)
+            return (a.name).localeCompare(b.name);
+          });
           for (const j in json[i].ingredients) {
             if (ingList.length) {
               let okToAdd = true;
@@ -100,6 +104,10 @@
             divShade: "2px 6px"
           });
         }
+        this.ings.sort((a, b) => {
+          console.log(a.name)
+          return (a.name).localeCompare(b.name);
+        });
       },
       receiveEmit(divId) {
         let isCocktail = false;
@@ -135,7 +143,6 @@
               this.cocktails[i].isSelected = false;
               this.cocktails[i].divBg = "#ede4d1";
               this.cocktails[i].divShade = "2px 6px";
-              //this.details = ""
             }
           }
         }

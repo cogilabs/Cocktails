@@ -10,7 +10,7 @@
     ]
   },
   "Piñacolada": {
-    "description": "<h1>Piñacolada</h1>Description et recette de la Piñacolada",
+    "description": "<h1>La Piñacolada</h1>Description et recette de la Piñacolada",
     "ingredients": [
       "Rhum blanc", 
       "Rhum ambré VO", 
@@ -28,10 +28,10 @@
     ]
   },
   "Aloha vanille": {
-    "description": "<h1>Aloha vanille</h1>Description et recette de l'Aloha vanille",
+    "description": "<h1>L'Aloha vanille</h1>Description et recette de l'Aloha vanille",
     "ingredients": [
       "Rhum ambré", 
-      "jus d'orange", 
+      "Jus d'orange", 
       "Jus d'ananas", 
       "Lait de coco",
       "Boule de glace vanille",
@@ -39,7 +39,7 @@
     ]
   },
   "Mai Tai": {
-    "description": "<h1>Mai Tai</h1>Description et recette du Mai Tai",
+    "description": "<h1>Le Mai Tai</h1>Description et recette du Mai Tai",
     "ingredients": [
       "Rhum blanc", 
       "Sirop d'orgeat", 
@@ -48,7 +48,7 @@
     ]
   },
   "Whiskey in the jar": {
-    "description": "<h1>Whiskey in the jar</h1>Pêche mûre <i>ou</i> jus de pêche concentré</br>Sucre en poudre <i>ou</i> Sirop de pêche",
+    "description": "<h1>The Whiskey in the jar</h1>Pêche mûre <i>ou</i> jus de pêche concentré</br>Sucre en poudre <i>ou</i> Sirop de pêche",
     "ingredients": [
       "Whiskey bushmills", 
       "Pêche mûre", 
@@ -59,7 +59,7 @@
     ]
   },
   "Elevenses": {
-    "description": "<h1>Elevenses</h1>Description et recette du Elevenses",
+    "description": "<h1>L'Elevenses</h1>Description et recette du Elevenses",
     "ingredients": [
       "Whiskey Tullamore", 
       "Confiture de framboises", 
@@ -68,7 +68,7 @@
     ]
   },
   "Wapplesky": {
-    "description": "<h1>Wapplesky</h1>Description et recette du Wapplesky",
+    "description": "<h1>Le Wapplesky</h1>Description et recette du Wapplesky",
     "ingredients": [
       "Whiskey écossais", 
       "Jus de pomme", 
@@ -77,7 +77,7 @@
     ]
   },
   "Lynchburg Lemonade": {
-    "description": "<h1>Lynchburg Lemonade</h1>Description et recette de la Lynchburg Lemonade",
+    "description": "<h1>La Lynchburg Lemonade</h1>Description et recette de la Lynchburg Lemonade",
     "ingredients": [
       "Whiskey Jack Daniel's", 
       "Jus de citron", 
@@ -86,7 +86,7 @@
     ]
   },
   "Sex on the beach": {
-    "description": "<h1>Sex on the beach</h1>Description et recette du Sex on the beach",
+    "description": "<h1>Le Sex on the beach</h1>Description et recette du Sex on the beach",
     "ingredients": [
       "Vodka", 
       "Jus d'orange", 
@@ -96,7 +96,7 @@
     ]
   },
   "Frescesa": {
-    "description": "<h1>Frescesa</h1>Description et recette de la Frescesa",
+    "description": "<h1>La Frescesa</h1>Description et recette de la Frescesa",
     "ingredients": [
       "Vodka", 
       "Citron vert", 
@@ -106,7 +106,7 @@
     ]
   },
   "Russe Blanche": {
-    "description": "<h1>Russe Blanche</h1>Description et recette de la Russe Blanche",
+    "description": "<h1>La Russe Blanche</h1>Description et recette de la Russe Blanche",
     "ingredients": [
       "Vodka", 
       "Liqueur de café", 
@@ -114,7 +114,7 @@
     ]
   },
   "Vodka de Noël": {
-    "description": "<h1>Vodka de Noël</h1>Description et recette de la Vodka de Noël",
+    "description": "<h1>La Vodka de Noël</h1>Description et recette de la Vodka de Noël",
     "ingredients": [
       "Vodka", 
       "Liqueur de café", 
