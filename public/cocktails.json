@@ -1,6 +1,6 @@
 {
   "Mojito": {
-    "description": "<!--Description et recette du Mojito, '</br>' permet un retour à la ligne. Exemple :--> <h1>Le Mojito</h1>Pour préparer un Mojito, vous aurez besoin de :</br></br> - Rhum blanc</br> - Citron vert</br> - Sucre (brun de préférence)</br> - Feuilles de menthe</br> - Glace pilée</br> - Eau gazeuze",
+    "description": "<!--Description et recette du Mojito, '</br>' permet un retour à la ligne. Exemple :--> <h1>Le Mojito</h1>Pour préparer un Mojito, vous aurez besoin de :</br></br> - Rhum blanc</br> - Citron vert</br> - Sucre brun</br> - Feuilles de menthe</br> - Glace pilée</br> - Eau gazeuze",
     "ingredients": [
       "Rhum blanc", 
       "Citron vert", 
