@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <p>{{ details }}</p>
-  </div>
+  <div v-html="details"></div>
 </template>
 
 <script>

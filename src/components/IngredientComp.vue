@@ -1,12 +1,12 @@
 <template>
-  <div v-bind:style="{ backgroundColor: ingBg, boxShadow: '0 ' + ingShade + ' 0 rgba(0,0,0,0.2)' }" @click="toggleSelected">
+  <div v-bind:style="{ backgroundColor: divBg, boxShadow: '0 ' + divShade + ' 0 rgba(0,0,0,0.2)' }" @click="toggleSelected">
     <h4>{{ ingName }}</h4>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['ingName','isSelected','ingBg','ingShade'],
+  props: ['ingName','isSelected','divBg','divShade'],
   methods: {
     toggleSelected() {
       this.$emit('toggle-selected', this.ingName);

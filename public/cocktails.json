@@ -1,7 +1,7 @@
 {
   "Mojito": {
-    "decription": "<!--Description et recette du Mojito, '</br>' permet un retour à la ligne. Exemple :--> <h1>Le Mojito</h1></br>Pour préparer un Mojito, vous aurez besoin de :</br> - Rhum blanc</br> - Citron vert</br> - Sucre (brun de préférence)</br> - Feuilles de menthe</br> - Glace pilée</br> - Eau gazeuze",
-    "Ingredients": [
+    "description": "<!--Description et recette du Mojito, '</br>' permet un retour à la ligne. Exemple :--> <h1>Le Mojito</h1>Pour préparer un Mojito, vous aurez besoin de :</br></br> - Rhum blanc</br> - Citron vert</br> - Sucre (brun de préférence)</br> - Feuilles de menthe</br> - Glace pilée</br> - Eau gazeuze",
+    "ingredients": [
       "Rhum blanc", 
       "Citron vert", 
       "Sucre brun", 
@@ -10,8 +10,8 @@
     ]
   },
   "Piñacolada": {
-    "decription": "Description et recette de la Piñacolada",
-    "Ingredients": [
+    "description": "<h1>Piñacolada</h1>Description et recette de la Piñacolada",
+    "ingredients": [
       "Rhum blanc", 
       "Rhum ambré VO", 
       "Jus d'ananas", 
@@ -19,8 +19,8 @@
     ]
   },
   "Mademoiselle": {
-    "decription": "Description et recette de la Mademoiselle",
-    "Ingredients": [
+    "description": "<h1>Mademoiselle</h1>Description et recette de la Mademoiselle",
+    "ingredients": [
       "Rhum arrangé", 
       "Liqueur de grenade", 
       "Liqueur de fleur de sureau", 
@@ -28,8 +28,8 @@
     ]
   },
   "Aloha vanille": {
-    "decription": "Description et recette de l'Aloha vanille",
-    "Ingredients": [
+    "description": "<h1>Aloha vanille</h1>Description et recette de l'Aloha vanille",
+    "ingredients": [
       "Rhum ambré", 
       "jus d'orange", 
       "Jus d'ananas", 
@@ -39,8 +39,8 @@
     ]
   },
   "Mai Tai": {
-    "decription": "Description et recette du Mai Tai",
-    "Ingredients": [
+    "description": "<h1>Mai Tai</h1>Description et recette du Mai Tai",
+    "ingredients": [
       "Rhum blanc", 
       "Sirop d'orgeat", 
       "Citron vert", 
@@ -48,8 +48,8 @@
     ]
   },
   "Whiskey in the jar": {
-    "decription": "Pêche mûre <i>ou</i> jus de pêche concentré</br>Sucre en poudre <i>ou</i> Sirop de pêche",
-    "Ingredients": [
+    "description": "<h1>Whiskey in the jar</h1>Pêche mûre <i>ou</i> jus de pêche concentré</br>Sucre en poudre <i>ou</i> Sirop de pêche",
+    "ingredients": [
       "Whiskey bushmills", 
       "Pêche mûre", 
       "Jus de pêche concentré", 
@@ -59,8 +59,8 @@
     ]
   },
   "Elevenses": {
-    "decription": "Description et recette du Elevenses",
-    "Ingredients": [
+    "description": "<h1>Elevenses</h1>Description et recette du Elevenses",
+    "ingredients": [
       "Whiskey Tullamore", 
       "Confiture de framboises", 
       "Jus de citron", 
@@ -68,8 +68,8 @@
     ]
   },
   "Wapplesky": {
-    "decription": "Description et recette du Wapplesky",
-    "Ingredients": [
+    "description": "<h1>Wapplesky</h1>Description et recette du Wapplesky",
+    "ingredients": [
       "Whiskey écossais", 
       "Jus de pomme", 
       "Sirop de miel", 
@@ -77,8 +77,8 @@
     ]
   },
   "Lynchburg Lemonade": {
-    "decription": "Description et recette de la Lynchburg Lemonade",
-    "Ingredients": [
+    "description": "<h1>Lynchburg Lemonade</h1>Description et recette de la Lynchburg Lemonade",
+    "ingredients": [
       "Whiskey Jack Daniel's", 
       "Jus de citron", 
       "Sirop de sucre de canne", 
@@ -86,8 +86,8 @@
     ]
   },
   "Sex on the beach": {
-    "decription": "Description et recette du Sex on the beach",
-    "Ingredients": [
+    "description": "<h1>Sex on the beach</h1>Description et recette du Sex on the beach",
+    "ingredients": [
       "Vodka", 
       "Jus d'orange", 
       "Jus de cramberry", 
@@ -96,8 +96,8 @@
     ]
   },
   "Frescesa": {
-    "decription": "Description et recette de la Frescesa",
-    "Ingredients": [
+    "description": "<h1>Frescesa</h1>Description et recette de la Frescesa",
+    "ingredients": [
       "Vodka", 
       "Citron vert", 
       "Pêche", 
@@ -106,16 +106,16 @@
     ]
   },
   "Russe Blanche": {
-    "decription": "Description et recette de la Russe Blanche",
-    "Ingredients": [
+    "description": "<h1>Russe Blanche</h1>Description et recette de la Russe Blanche",
+    "ingredients": [
       "Vodka", 
       "Liqueur de café", 
       "Crème liquide entière"
     ]
   },
   "Vodka de Noël": {
-    "decription": "Description et recette de la Vodka de Noël",
-    "Ingredients": [
+    "description": "<h1>Vodka de Noël</h1>Description et recette de la Vodka de Noël",
+    "ingredients": [
       "Vodka", 
       "Liqueur de café", 
       "Coca", 

@@ -3,15 +3,15 @@
     <div class="ing">
       <div>
         <transition-group name="fade">
-        <ingredient-comp 
-          v-for="x in ings"
-          :key="'ingredient-' + x.name"
-          :ing-name="x.name"
-          :ing-bg="x.ingBg"
-          :ing-shade="x.ingShade"
-          :is-selected="x.isSelected"
-          @toggle-selected="receiveEmit"
-        />
+          <ingredient-comp 
+            v-for="x in ings"
+            :key="'ingredient-' + x.name"
+            :ing-name="x.name"
+            :div-bg="x.divBg"
+            :div-shade="x.divShade"
+            :is-selected="x.isSelected"
+            @toggle-selected="receiveEmit"
+          />
         </transition-group>
       </div>
     </div>
@@ -22,8 +22,13 @@
             v-for="x in filteredCocktails"
             :key="'cocktail-' + x.name"
             :cocktail-name="x.name"
+            :div-bg="x.divBg"
+            :div-shade="x.divShade"
+            :cocktail-details="x.description"
             :cocktail-ingredients="x.ingredients"
             :displayed="x.displayed"
+            :is-selected="x.isSelected"
+            @toggle-selected="receiveEmit"
           />
         </transition-group>
       </div>
@@ -32,6 +37,7 @@
       <div>
         <transition name="fade">
         <details-comp 
+          v-if="details"
           :details="details"
         />
         </transition>
@@ -46,7 +52,7 @@
       return {
         ings: [],
         cocktails: [],
-        details: "Cocktail details will soon be shown here"
+        details: ""
       };
     },
     mounted() {
@@ -65,22 +71,24 @@
         for (const i in json) {
           this.cocktails.push({
             name: i, 
-            ingredients: json[i].Ingredients, 
+            isSelected: false, 
+            ingredients: json[i].ingredients, 
+            description: json[i].description,
             displayed: true
           });
-          for (const j in json[i].Ingredients) {
+          for (const j in json[i].ingredients) {
             if (ingList.length) {
               let okToAdd = true;
               for (const k in ingList) {
-                if (json[i].Ingredients[j] == ingList[k]) {
+                if (json[i].ingredients[j] == ingList[k]) {
                   okToAdd = false;
                 }
               }
               if (okToAdd) {
-                ingList.push(json[i].Ingredients[j]);
+                ingList.push(json[i].ingredients[j]);
               }
             } else {
-              ingList.push(json[i].Ingredients[j]);
+              ingList.push(json[i].ingredients[j]);
             }            
           }
         }
@@ -88,24 +96,64 @@
           this.ings.push({
             name: ingList[i], 
             isSelected: false, 
-            ingBg: "#ede4d1", 
-            ingShade: "2px 6px"
+            divBg: "#ede4d1", 
+            divShade: "2px 6px"
           });
         }
       },
-      receiveEmit(ingId) {
-        let foundIng = this.ings.find(
-          ing => ing.name === ingId
+      receiveEmit(divId) {
+        let isCocktail = false;
+        let foundObject = this.ings.find(
+          ing => ing.name === divId
         );
-        foundIng.isSelected = !foundIng.isSelected;
-        if (foundIng.isSelected) {
-          foundIng.ingBg = "#f4b126";
-          foundIng.ingShade = "8px 12px"
+        if (foundObject == undefined) {
+          foundObject = this.cocktails.find(
+            cocktail => cocktail.name === divId
+          );
+          isCocktail = true;
+        }
+        foundObject.isSelected = !foundObject.isSelected;
+        if (isCocktail) {
+          for (const i in this.cocktails) {
+            if (this.cocktails[i] != foundObject) {
+              this.cocktails[i].isSelected = false;
+              this.cocktails[i].divBg = "#ede4d1";
+              this.cocktails[i].divShade = "2px 6px"
+            }
+          }
+          if (foundObject.isSelected){
+            this.details = foundObject.description
+          } else {
+            this.details = ""
+          }
         } else {
-          foundIng.ingBg = "#ede4d1";
-          foundIng.ingShade = "2px 6px"
+          for (const i in this.cocktails) {
+            if (!this.cocktails[i].displayed) {
+              if (this.cocktails[i].isSelected == true) {
+                this.details = "";
+              }
+              this.cocktails[i].isSelected = false;
+              this.cocktails[i].divBg = "#ede4d1";
+              this.cocktails[i].divShade = "2px 6px";
+              //this.details = ""
+            }
+          }
+        }
+        if (foundObject.isSelected) {
+          foundObject.divBg = "#f4b126";
+          foundObject.divShade = "8px 12px"
+        } else {
+          foundObject.divBg = "#ede4d1";
+          foundObject.divShade = "2px 6px"
         }
         this.listCocktails();
+          for (const i in this.cocktails) {
+            if (!this.cocktails[i].displayed) {
+              if (this.cocktails[i].isSelected == true) {
+                this.details = "";
+              }
+            }
+          }
       },
       listCocktails() {
         let checker = (arr, target) => target.every(v => arr.includes(v));
@@ -147,9 +195,8 @@
     height: 100%;
     overflow-y: auto;
   }
-  .cocktail {
+  .cocktail, .details {
     border-left: solid #f4b126;
-    border-right: solid #f4b126;
   }
   .ing > div, .cocktail > div, .details > div {
     padding: 10px;
