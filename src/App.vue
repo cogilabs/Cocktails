@@ -9,6 +9,7 @@
             :ing-name="x.name"
             :div-bg="x.divBg"
             :div-shade="x.divShade"
+            :displayed="x.displayed"
             :is-selected="x.isSelected"
             @toggle-selected="receiveEmit"
           />
@@ -77,7 +78,6 @@
             displayed: true
           });
           this.cocktails.sort((a, b) => {
-            console.log(a.name)
             return (a.name).localeCompare(b.name);
           });
           for (const j in json[i].ingredients) {
@@ -101,11 +101,11 @@
             name: ingList[i], 
             isSelected: false, 
             divBg: "#ede4d1", 
-            divShade: "2px 6px"
+            divShade: "2px 6px",
+            displayed: true
           });
         }
         this.ings.sort((a, b) => {
-          console.log(a.name)
           return (a.name).localeCompare(b.name);
         });
       },
@@ -172,6 +172,25 @@
         }
         for (const i in this.cocktails) {
           this.cocktails[i].displayed = checker(this.cocktails[i].ingredients, selectedIngs)
+        }
+        //this.reListIngs()
+      },
+      reListIngs() {
+        const allIngs = new Array();
+        for (const i in this.ings) {
+          this.ings[i].displayed = false;
+          allIngs.push(this.ings[i].name)
+        }
+        for (const i in allIngs) {
+          for (const j in this.cocktails) {
+            for (const k in this.cocktails[j].ingredients) {
+              if (this.cocktails[j].displayed) {
+                if (this.cocktails[j].ingredients.includes(allIngs[i])) {
+                  this.ings[i].displayed = true;
+                }
+              }
+            }
+          }
         }
       }
     }
