@@ -38,16 +38,7 @@
       "Jus de citron"
     ]
   },
-  "Mai Tai (1?)": {
-    "description": "<h1>Le Mai Tai</h1>Pour préparer un Mai Tai, vous aurez besoin de :</br></br> - Rhum blanc</br> - Sirop d'orgeat</br> - Citron vert</br> - Liqueur d'orange type Cointreau",
-    "ingredients": [
-      "Rhum blanc", 
-      "Sirop d'orgeat", 
-      "Citron vert", 
-      "Liqueur d'orange type Cointreau"
-    ]
-  },
-  "Mai Tai (2?)": {
+  "Mai Tai": {
     "description": "<h1>Le Mai Tai</h1>Préparez un Mai Tai avec ces ingrédients :</br></br> - Rhum blanc</br> - Rhum brun</br> - Jus de citron vert</br> - Sirop d'orgeat</br> - Liqueur d'orange</br> - Brin de menthe (pour la garniture)",
     "ingredients": [
       "Rhum blanc",
