@@ -1,6 +1,7 @@
 <template>
   <div class="master">
     <div class="ing">
+      <input type="text" v-model="ingSearch" v-on:input="reListIngs(ingSearch)" placeholder="Entrez un ingrédient">
       <div>
         <transition-group name="fade">
           <ingredient-comp 
@@ -53,7 +54,8 @@
       return {
         ings: [],
         cocktails: [],
-        details: ""
+        details: "",
+        ingSearch: ""
       };
     },
     mounted() {
@@ -110,6 +112,7 @@
         });
       },
       receiveEmit(divId) {
+        this.ingSearch = ""
         let isCocktail = false;
         let foundObject = this.ings.find(
           ing => ing.name === divId
@@ -175,7 +178,10 @@
         }
         this.reListIngs()
       },
-      reListIngs() {
+      reListIngs(searchParams) {
+        if (!searchParams) {
+          searchParams = ""
+        }
         const allIngs = new Array();
         for (const i in this.ings) {
           this.ings[i].displayed = false;
@@ -186,7 +192,9 @@
             for (const k in this.cocktails[j].ingredients) {
               if (this.cocktails[j].displayed) {
                 if (this.cocktails[j].ingredients.includes(allIngs[i])) {
-                  this.ings[i].displayed = true;
+                  if (allIngs[i].toLowerCase().includes(searchParams.toLowerCase())) {
+                    this.ings[i].displayed = true
+                  }
                 }
               }
             }
@@ -218,6 +226,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-content: flex-start;
     height: 100%;
     overflow-y: auto;
   }
@@ -247,5 +256,10 @@
   }
   .fade-move {
     transition: all 0.7s
+  }
+  input {
+    height: fit-content;
+    width: 30vw;
+    margin-top: 10px
   }
 </style>
