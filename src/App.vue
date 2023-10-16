@@ -197,7 +197,7 @@
     background-image: url(https://cogilabs.eu/Images/Pinstripe2.png);
     background-repeat: repeat;
     background-color: #18222c;
-    color: #f4b126;
+    color: whitesmoke;
     font-family: Helvetica, Arial, sans-serif;
     margin: 0;
   }
