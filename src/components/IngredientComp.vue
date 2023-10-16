@@ -18,7 +18,8 @@ export default {
 <style scoped>
   div {
     color: #494c50;
-    width: 100px;
+    width: fit-content;
+    max-width: 120px;
     height: fit-content;
     padding: 10px;
     margin-top: 10px;

@@ -9,15 +9,6 @@
       "Eau gazeuse"
     ]
   },
-  "Piñacolada": {
-    "description": "<h1>La Piñacolada</h1>Pour préparer une Piñacolada, vous aurez besoin de :</br></br> - Rhum blanc</br> - Rhum ambré VO</br> - Jus d'ananas</br> - Crème de coco",
-    "ingredients": [
-      "Rhum blanc", 
-      "Rhum ambré VO", 
-      "Jus d'ananas", 
-      "Crème de coco"
-    ]
-  },
   "Mademoiselle": {
     "description": "<h1>Mademoiselle</h1>Pour préparer un Mademoiselle, vous aurez besoin de :</br></br> - Rhum arrangé</br> - Liqueur de grenade</br> - Liqueur de fleur de sureau</br> - Bitter cerise",
     "ingredients": [
@@ -184,9 +175,10 @@
     ]
   },
   "Piña Colada": {
-    "description": "<h1>La Piña Colada</h1>Pour une Piña Colada, vous aurez besoin de :</br></br> - Rhum blanc</br> - Crème de coco</br> - Jus d'ananas</br> - Tranche d'ananas (pour la garniture)",
+    "description": "<h1>La Piña Colada</h1>Pour une Piña Colada, vous aurez besoin de :</br></br> - Rhum blanc</br> - Rhum ambré VO</br> - Crème de coco</br> - Jus d'ananas</br> - Tranche d'ananas (pour la garniture)",
     "ingredients": [
       "Rhum blanc",
+      "Rhum ambré VO", 
       "Crème de coco",
       "Jus d'ananas",
       "Ananas"

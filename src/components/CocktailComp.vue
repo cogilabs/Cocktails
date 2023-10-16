@@ -20,7 +20,8 @@ export default {
     background-color: #ede4d1;
     box-shadow: 0 5px 6px 0 rgba(0,0,0,0.2);
     color: #494c50;
-    width: 150px;
+    width: fit-content;
+    max-width: 150px;
     height: fit-content;
     padding: 10px;
     margin-top: 10px;
