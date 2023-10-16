@@ -4,10 +4,10 @@
       <input type="text" v-model="ingSearch" v-on:input="reListIngs(ingSearch)" placeholder="Entrez un ingrédient">
       <div class="ingInt">
         <transition-group name="fade">
-          <ingredient-comp 
+          <card-comp 
             v-for="x in ings"
             :key="'ingredient-' + x.name"
-            :ing-name="x.name"
+            :name="x.name"
             :displayed="x.displayed"
             :is-selected="x.isSelected"
             @toggle-selected="receiveEmit"
@@ -18,12 +18,10 @@
     <div class="cocktail">
       <div class="cocktailInt">
         <transition-group name="fade">
-          <cocktail-comp 
+          <card-comp 
             v-for="x in filteredCocktails"
             :key="'cocktail-' + x.name"
-            :cocktail-name="x.name"
-            :cocktail-details="x.description"
-            :cocktail-ingredients="x.ingredients"
+            :name="x.name"
             :displayed="x.displayed"
             :is-selected="x.isSelected"
             @toggle-selected="receiveEmit"
@@ -229,7 +227,17 @@
     justify-content: space-around;
     height: fit-content;
   }
-
+  .ingInt > div {
+    max-width: 120px;
+  }
+  .cocktailInt > div {
+    max-width: 150px;
+  }
+  .cocktailInt > div > h4 {
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+  }
   .ingInt > div:not(.selClass), .cocktailInt > div:not(.selClass) {
     background-color: #ede4d1;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2)
@@ -238,6 +246,12 @@
     background-color: #f4b126;
     box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
   }
+  input {
+    height: fit-content;
+    width: 30vw;
+    margin-top: 10px
+  }
+
   .fade-enter-active, .fade-leave-active {
     transition: opacity 0.7s, transform 0.7s;
   }
@@ -254,10 +268,5 @@
   }
   .fade-move {
     transition: all 0.7s
-  }
-  input {
-    height: fit-content;
-    width: 30vw;
-    margin-top: 10px
   }
 </style>
