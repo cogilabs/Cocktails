@@ -173,7 +173,7 @@
         for (const i in this.cocktails) {
           this.cocktails[i].displayed = checker(this.cocktails[i].ingredients, selectedIngs)
         }
-        //this.reListIngs()
+        this.reListIngs()
       },
       reListIngs() {
         const allIngs = new Array();

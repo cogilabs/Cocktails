@@ -1,5 +1,5 @@
 <template>
-  <div v-if="displayed" v-bind:style="{ backgroundColor: divBg, boxShadow: '0 ' + divShade + ' 0 rgba(0,0,0,0.2)' }" @click="toggleSelected">
+  <div v-show="displayed" v-bind:style="{ backgroundColor: divBg, boxShadow: '0 ' + divShade + ' 0 rgba(0,0,0,0.2)' }" @click="toggleSelected">
     <h4>{{ ingName }}</h4>
   </div>
 </template>
