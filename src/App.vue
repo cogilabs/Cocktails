@@ -55,7 +55,13 @@
         ings: [],
         cocktails: [],
         details: "",
-        ingSearch: ""
+        ingSearch: "",
+        style: {
+          cardBg: "#ede4d1", 
+          cardShade: "2px 6px", 
+          cardSelectedBg: "#f4b126", 
+          cardSelectedShade: "8px 12px"
+        }
       };
     },
     mounted() {
@@ -102,8 +108,8 @@
           this.ings.push({
             name: ingList[i], 
             isSelected: false, 
-            divBg: "#ede4d1", 
-            divShade: "2px 6px",
+            divBg: this.style.cardBg, 
+            divShade: this.style.cardShade,
             displayed: true
           });
         }
@@ -128,8 +134,8 @@
           for (const i in this.cocktails) {
             if (this.cocktails[i] != foundObject) {
               this.cocktails[i].isSelected = false;
-              this.cocktails[i].divBg = "#ede4d1";
-              this.cocktails[i].divShade = "2px 6px"
+              this.cocktails[i].divBg = this.style.cardBg;
+              this.cocktails[i].divShade = this.style.cardShade
             }
           }
           if (foundObject.isSelected){
@@ -144,17 +150,17 @@
                 this.details = "";
               }
               this.cocktails[i].isSelected = false;
-              this.cocktails[i].divBg = "#ede4d1";
-              this.cocktails[i].divShade = "2px 6px";
+              this.cocktails[i].divBg = this.style.cardBg;
+              this.cocktails[i].divShade = this.style.cardShade;
             }
           }
         }
         if (foundObject.isSelected) {
-          foundObject.divBg = "#f4b126";
-          foundObject.divShade = "8px 12px"
+          foundObject.divBg = this.style.cardSelectedBg;
+          foundObject.divShade = this.style.cardSelectedShade
         } else {
-          foundObject.divBg = "#ede4d1";
-          foundObject.divShade = "2px 6px"
+          foundObject.divBg = this.style.cardBg;
+          foundObject.divShade = this.style.cardShade
         }
         this.listCocktails();
           for (const i in this.cocktails) {
