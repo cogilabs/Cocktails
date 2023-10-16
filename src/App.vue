@@ -2,14 +2,12 @@
   <div class="master">
     <div class="ing">
       <input type="text" v-model="ingSearch" v-on:input="reListIngs(ingSearch)" placeholder="Entrez un ingrédient">
-      <div>
+      <div class="ingInt">
         <transition-group name="fade">
           <ingredient-comp 
             v-for="x in ings"
             :key="'ingredient-' + x.name"
             :ing-name="x.name"
-            :div-bg="x.divBg"
-            :div-shade="x.divShade"
             :displayed="x.displayed"
             :is-selected="x.isSelected"
             @toggle-selected="receiveEmit"
@@ -18,14 +16,12 @@
       </div>
     </div>
     <div class="cocktail">
-      <div>
+      <div class="cocktailInt">
         <transition-group name="fade">
           <cocktail-comp 
             v-for="x in filteredCocktails"
             :key="'cocktail-' + x.name"
             :cocktail-name="x.name"
-            :div-bg="x.divBg"
-            :div-shade="x.divShade"
             :cocktail-details="x.description"
             :cocktail-ingredients="x.ingredients"
             :displayed="x.displayed"
@@ -36,7 +32,7 @@
       </div>
     </div>
     <div class="details">
-      <div>
+      <div class="detailsInt">
         <transition name="fade">
         <details-comp 
           v-if="details"
@@ -108,8 +104,6 @@
           this.ings.push({
             name: ingList[i], 
             isSelected: false, 
-            divBg: this.style.cardBg, 
-            divShade: this.style.cardShade,
             displayed: true
           });
         }
@@ -134,8 +128,6 @@
           for (const i in this.cocktails) {
             if (this.cocktails[i] != foundObject) {
               this.cocktails[i].isSelected = false;
-              this.cocktails[i].divBg = this.style.cardBg;
-              this.cocktails[i].divShade = this.style.cardShade
             }
           }
           if (foundObject.isSelected){
@@ -150,17 +142,8 @@
                 this.details = "";
               }
               this.cocktails[i].isSelected = false;
-              this.cocktails[i].divBg = this.style.cardBg;
-              this.cocktails[i].divShade = this.style.cardShade;
             }
           }
-        }
-        if (foundObject.isSelected) {
-          foundObject.divBg = this.style.cardSelectedBg;
-          foundObject.divShade = this.style.cardSelectedShade
-        } else {
-          foundObject.divBg = this.style.cardBg;
-          foundObject.divShade = this.style.cardShade
         }
         this.listCocktails();
           for (const i in this.cocktails) {
@@ -244,7 +227,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    height: fit-content
+    height: fit-content;
+  }
+
+  .ingInt > div:not(.selClass), .cocktailInt > div:not(.selClass) {
+    background-color: #ede4d1;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2)
+  }
+  .selClass {
+    background-color: #f4b126;
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
   }
   .fade-enter-active, .fade-leave-active {
     transition: opacity 0.7s, transform 0.7s;

@@ -1,12 +1,12 @@
 <template>
-  <div v-if="displayed" v-bind:style="{ backgroundColor: divBg, boxShadow: '0 ' + divShade + ' 0 rgba(0,0,0,0.2)' }" @click="toggleSelected">
+  <div v-if="displayed" v-bind:class="{selClass: isSelected}" @click="toggleSelected">
     <h3>{{ cocktailName }}</h3>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['cocktailName','isSelected','divBg','divShade','cocktailIngredients','displayed','description'],
+  props: ['cocktailName','isSelected','cocktailIngredients','displayed','description'],
   methods: {
     toggleSelected() {
       this.$emit('toggle-selected', this.cocktailName);
@@ -17,8 +17,6 @@ export default {
 
 <style scoped>
   div {
-    background-color: #ede4d1;
-    box-shadow: 0 5px 6px 0 rgba(0,0,0,0.2);
     color: #494c50;
     width: fit-content;
     max-width: 150px;
