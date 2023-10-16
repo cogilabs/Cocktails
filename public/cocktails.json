@@ -38,13 +38,24 @@
       "Jus de citron"
     ]
   },
-  "Mai Tai": {
+  "Mai Tai (1?)": {
     "description": "<h1>Le Mai Tai</h1>Pour préparer un Mai Tai, vous aurez besoin de :</br></br> - Rhum blanc</br> - Sirop d'orgeat</br> - Citron vert</br> - Liqueur d'orange type Cointreau",
     "ingredients": [
       "Rhum blanc", 
       "Sirop d'orgeat", 
       "Citron vert", 
       "Liqueur d'orange type Cointreau"
+    ]
+  },
+  "Mai Tai (2?)": {
+    "description": "<h1>Le Mai Tai</h1>Préparez un Mai Tai avec ces ingrédients :</br></br> - Rhum blanc</br> - Rhum brun</br> - Jus de citron vert</br> - Sirop d'orgeat</br> - Liqueur d'orange</br> - Brin de menthe (pour la garniture)",
+    "ingredients": [
+      "Rhum blanc",
+      "Rhum brun",
+      "Jus de citron vert",
+      "Sirop d'orgeat",
+      "Liqueur d'orange",
+      "Brin de menthe"
     ]
   },
   "Whiskey in the jar": {
@@ -120,6 +131,102 @@
       "Liqueur de café", 
       "Coca", 
       "Crème liquide"
+    ]
+  },
+  "Margarita": {
+    "description": "<h1>La Margarita</h1>Pour préparer une Margarita, vous aurez besoin de :</br></br> - Tequila</br> - Jus de citron vert</br> - Triple sec</br> - Sel</br> - Glaçons",
+    "ingredients": [
+      "Tequila",
+      "Jus de citron vert",
+      "Triple sec",
+      "Sel"
+    ]
+  },
+  "Daiquiri": {
+    "description": "<h1>Le Daiquiri</h1>Pour préparer un Daiquiri, vous aurez besoin de :</br></br> - Rhum blanc</br> - Jus de citron</br> - Sucre",
+    "ingredients": [
+      "Rhum blanc",
+      "Jus de citron",
+      "Sucre"
+    ]
+  },
+  "Mule de Moscou": {
+    "description": "<h1>La Mule de Moscou</h1>Pour préparer un Moscow Mule, vous aurez besoin de :</br></br> - Vodka</br> - Jus de citron</br> - Ginger beer</br> - Glaçons</br> - Tranches de citron vert",
+    "ingredients": [
+      "Vodka",
+      "Jus de citron",
+      "Ginger beer",
+      "Citron vert"
+    ]
+  },
+  "Pisco Sour": {
+    "description": "<h1>Le Pisco Sour</h1>Pour préparer un Pisco Sour, vous aurez besoin de :</br></br> - Pisco</br> - Jus de citron</br> - Blanc d'œuf</br> - Sirop de sucre</br> - Angostura bitter",
+    "ingredients": [
+      "Pisco",
+      "Jus de citron",
+      "Blanc d'œuf",
+      "Sirop de sucre",
+      "Angostura bitter"
+    ]
+  },
+  "Cosmopolitan": {
+    "description": "<h1>Le Cosmopolitan</h1>Pour préparer un Cosmopolitan, vous aurez besoin de :</br></br> - Vodka</br> - Triple sec</br> - Jus de canneberge</br> - Jus de citron vert</br> - Zeste d'orange (pour la garniture)",
+    "ingredients": [
+      "Vodka",
+      "Triple sec",
+      "Jus de canneberge",
+      "Jus de citron vert",
+      "Orange"
+    ]
+  },
+  "Bloody Mary": {
+    "description": "<h1>Le Bloody Mary</h1>Pour préparer un Bloody Mary, rassemblez ces ingrédients :</br></br> - Vodka</br> - Jus de tomate</br> - Jus de citron</br> - Sauce Worcestershire</br> - Sauce piquante</br> - Céleri, olives et cornichons (pour la garniture)",
+    "ingredients": [
+      "Vodka",
+      "Jus de tomate",
+      "Jus de citron",
+      "Sauce Worcestershire",
+      "Sauce piquante",
+      "Céleri",
+      "Olives",
+      "Cornichons"
+    ]
+  },
+  "Piña Colada": {
+    "description": "<h1>La Piña Colada</h1>Pour une Piña Colada, vous aurez besoin de :</br></br> - Rhum blanc</br> - Crème de coco</br> - Jus d'ananas</br> - Tranche d'ananas (pour la garniture)",
+    "ingredients": [
+      "Rhum blanc",
+      "Crème de coco",
+      "Jus d'ananas",
+      "Ananas"
+    ]
+  },
+  "Screwdriver": {
+    "description": "<h1>Le Screwdriver</h1>Un Screwdriver se réalise avec :</br></br> - Vodka</br> - Jus d'orange</br> - Tranche d'orange (pour la garniture)",
+    "ingredients": [
+      "Vodka",
+      "Jus d'orange",
+      "Orange"
+    ]
+  },
+  "Mojito Framboise": {
+    "description": "<h1>Le Mojito Framboise</h1>Pour un Mojito Framboise, vous aurez besoin de :</br></br> - Rhum blanc</br> - Framboises fraîches</br> - Jus de citron vert</br> - Feuilles de menthe</br> - Sucre de canne</br> - Eau gazeuse",
+    "ingredients": [
+      "Rhum blanc",
+      "Framboises fraîches",
+      "Jus de citron vert",
+      "Feuilles de menthe",
+      "Sucre de canne",
+      "Eau gazeuse"
+    ]
+  },
+  "Tequila Sunrise": {
+    "description": "<h1>Le Tequila Sunrise</h1>Pour préparer un Tequila Sunrise, rassemblez ces ingrédients :</br></br> - Tequila</br> - Jus d'orange</br> - Sirop de grenadine</br> - Glaçons</br> - Tranche d'orange (pour la garniture)",
+    "ingredients": [
+      "Tequila",
+      "Jus d'orange",
+      "Sirop de grenadine",
+      "Orange"
     ]
   }
 }
