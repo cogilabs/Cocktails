@@ -49,13 +49,7 @@
         ings: [],
         cocktails: [],
         details: "",
-        ingSearch: "",
-        style: {
-          cardBg: "#ede4d1", 
-          cardShade: "2px 6px", 
-          cardSelectedBg: "#f4b126", 
-          cardSelectedShade: "8px 12px"
-        }
+        ingSearch: ""
       };
     },
     mounted() {
