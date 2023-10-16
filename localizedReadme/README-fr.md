@@ -3,7 +3,9 @@
 
 ### ***Attention : En plein développement***
 
-Le but principal du projet est de m'aider à apprendre Vue.js.
+L'objectif principal du projet est de m'aider à apprendre Vue.js.
+
+Il a été construit sur une idée de [idoleY](https://github.com/idoleY) et avec son aide pour le design et le choix des cocktails.
 
 Vous pouvez voir la dernière version déployée sur [cocktails.cogilabs.eu](https://cocktails.cogilabs.eu).
 
