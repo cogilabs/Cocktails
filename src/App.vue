@@ -115,7 +115,7 @@
           );
           isCocktail = true;
         }
-        foundObject.isSelected = !foundObject.isSelected;
+        if (foundObject.displayed) foundObject.isSelected = !foundObject.isSelected;
         if (isCocktail) {
           for (const i in this.cocktails) {
             if (this.cocktails[i] != foundObject) {
