@@ -1,6 +1,7 @@
 <template>
   <div class="master">
     <div class="ing">
+      <p class="sectionTitle"><h1>Ingrédients</h1></p>
       <input type="text" v-model="ingSearch" v-on:input="reListIngs(ingSearch)" placeholder="Entrez un ingrédient">
       <div class="ingInt">
         <transition-group name="fade">
@@ -16,6 +17,7 @@
       </div>
     </div>
     <div class="cocktail">
+      <p class="sectionTitle"><h1>Cocktails</h1></p>
       <div class="cocktailInt">
         <transition-group name="fade">
           <card-comp 
@@ -30,6 +32,7 @@
       </div>
     </div>
     <div class="details">
+      <p class="sectionTitle"><h1>Détails et recette</h1></p>
       <div class="detailsInt">
         <transition name="fade">
         <details-comp 
@@ -194,6 +197,22 @@
     color: whitesmoke;
     font-family: Helvetica, Arial, sans-serif;
     margin: 0;
+  }
+  .sectionTitle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+  }
+  .sectionTitle > h1 {
+    width: 60%;
+    background-color: #423d32;
+    margin: 0;
+    padding: 10px;
+    border-radius: 10px;
   }
   .master {
     width: 100%;
