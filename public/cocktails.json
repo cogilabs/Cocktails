@@ -41,7 +41,7 @@
     ]
   },
   "Whiskey in the jar": {
-    "description": "<h1>The Whiskey in the jar</h1>Pour préparer un Whiskey in the jar, vous aurez besoin de :</br></br> - Whiskey Bushmills</br> - Pêche mûre <i>ou</i> jus de pêche concentré</br> - Sucre en poudre <i>ou</i> Sirop de pêche</br> - Feuilles de menthe",
+    "description": "<h1>Le Whiskey in the jar</h1>Pour préparer un Whiskey in the jar, vous aurez besoin de :</br></br> - Whiskey Bushmills</br> - Pêche mûre <i>ou</i> jus de pêche concentré</br> - Sucre en poudre <i>ou</i> Sirop de pêche</br> - Feuilles de menthe",
     "ingredients": [
       "Whiskey Bushmills", 
       "Pêche mûre", 
@@ -133,7 +133,7 @@
     ]
   },
   "Mule de Moscou": {
-    "description": "<h1>La Mule de Moscou</h1>Pour préparer un Moscow Mule, vous aurez besoin de :</br></br> - Vodka</br> - Jus de citron</br> - Ginger beer</br> - Glaçons</br> - Tranches de citron vert",
+    "description": "<h1>La Mule de Moscou</h1>Pour préparer une Mule de Moscou, vous aurez besoin de :</br></br> - Vodka</br> - Jus de citron</br> - Ginger beer</br> - Glaçons</br> - Tranches de citron vert",
     "ingredients": [
       "Vodka",
       "Jus de citron",
