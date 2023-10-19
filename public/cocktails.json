@@ -246,13 +246,38 @@
     ]
 },
 "Radioactive Long Island Iced Tea": {
-  "description": "<h1>Le Radioactive Long Island Iced Tea</h1>Pour préparer un Radioactive Long Island Iced Tea, rassemblez ces ingrédients :</br></br> - Rhum blanc</br> - Mang fraiche (pour la garniture)</br> - Jus de citron vert</br> - Feuilles de menthe</br> - Eau gazeuse",
+  "description": "<h1>Le Radioactive Long Island Iced Tea</h1>Pour préparer un Radioactive Long Island Iced Tea, rassemblez ces ingrédients :</br></br> - 1 oz Rhum ambré</br> - 1 oz Vodka</br> - 1 oz Tequila</br> - 1 oz Gin</br> - 1 oz Triple sec</br> - 1 oz Liqueuer de framboise (Chambord recommandé)</br> - 1 oz Liqueur de melon(Midori recommendé)</br> - 1 oz Malibu",
+  "degree": "",
+  "ingredients": [
+    "Rhum ambré",
+    "Vodka",
+    "Tequila",
+    "Gin",
+    "Triple sec",
+    "Liqueur de framboise",
+    "Liqueur de melon",
+    "Malibu"
+  ]
+},
+"National aquatrium": {
+  "description": "<h1>Le National aquatrium</h1>Pour préparer un National aquatrium, rassemblez ces ingrédients :</br></br> - 1/2 oz Rhum blanc</br> - 1/2 oz Vodka</br> - 1/2 oz Gin</br> - 1/2 oz Blue curaçao</br> - 2 oz Sour mix (recette sur l'app)</br> - complété avec une limonade (Type spryte conseiller)",
+  "degree": "",
   "ingredients": [
     "Rhum blanc",
-    "Mang fraiche",
-    "Jus de citron vert",
-    "Feuilles de menthe",
-    "Eau gazeuse"
+    "Vodka",
+    "Gin",
+    "Blue curaçao",
+    "Sour Mix",
+    "Limonade"
+  ]
+},
+"Sour Mix": {
+  "description": "<h1>Le Sour Mix</h1>Le Sour Mix est un melange souvent utilisé pour faire des cocktails. Pour un 1 litre de Sour Mix , rassemblez ces ingrédients(à modifier selon votre goût) :</br></br> - 50 cl de citron</br> - 40cl de sirop de sucre</br> - 10 cl de blanc d'oeuf (facultatif, mais cela apporte un liant mousseux au cocktails)</br></br></br> Versez tous les ingrédients dans une bouteille et remuez pour obtenir un mélange homogène.</br> Vous pouvez conserver votre mélange avec le blanc d'oeuf durant 2 jours au frais et 7 jours pour le mélange sans blanc d'oeuf.</br></br></br> Dans quels cocktails utiliser le sweet and sour mix ?</br></br></br> - Margarita</br> - Gin fizz</br> - Frozen Daïkiri</br> - National aquarium",
+  "degree": "",
+  "ingredients": [
+    "Jus de citron",
+    "Sirop de sucre",
+    "Blanc d'œuf"
   ]
   }
 }
