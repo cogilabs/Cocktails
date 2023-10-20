@@ -106,7 +106,7 @@
             degree: json[i].degree,
             displayed: true,
             special: true,
-            degVal: json[i].degree/20,
+            degVal: json[i].degree/20, // Goal: 🍹🍹🍹🍸🍸
           });
 
           //if (this.cocktails.degree > 0)
