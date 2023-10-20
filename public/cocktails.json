@@ -1,6 +1,6 @@
 {
   "Mojito": {
-    "description": "<h1>Le Mojito</h1>Pour préparer un Mojito, vous aurez besoin de :</br></br> - Rhum blanc</br> - Citron vert</br> - Sucre brun</br> - Feuilles de menthe</br> - Glace pilée</br> - Eau gazeuse",
+    "description": "<h1>Le Mojito</h1>Pour préparer un Mojito, vous aurez besoin de :</br></br> - 4.5cl Rhum blanc</br> - 2cl Citron vert</br> - 2 cuillere à café de Sucre brun</br> - Une quinzaine de Feuilles de menthe</br> - De la Glace pilée</br> - Complété le verre avec de l'Eau gazeuse",
     "degree": "",
     "ingredients": [
       "Rhum blanc", 
@@ -11,7 +11,7 @@
     ]
   },
   "Mademoiselle": {
-    "description": "<h1>Mademoiselle</h1>Pour préparer un Mademoiselle, vous aurez besoin de :</br></br> - Rhum arrangé</br> - Liqueur de grenade</br> - Liqueur de fleur de sureau</br> - Bitter cerise",
+    "description": "<h1>Mademoiselle</h1>Pour préparer un Mademoiselle, vous aurez besoin de :</br></br> - 5cl de Rhum arrangé</br> - 1cl Liqueur de grenade</br> - 1cl Liqueur de fleur de sureau</br> - 2 traits de Bitter cerise",
     "degree": "",
     "ingredients": [
       "Rhum arrangé", 
@@ -21,7 +21,7 @@
     ]
   },
   "Aloha vanille": {
-    "description": "<h1>L'Aloha vanille</h1>Pour préparer un Aloha vanille, vous aurez besoin de :</br></br> - Rhum ambré</br> - Jus d'orange</br> - Jus d'ananas</br> - Lait de coco</br> - Boule de glace vanille</br> - Jus de citron",
+    "description": "<h1>L'Aloha vanille</h1>Pour préparer un Aloha vanille, vous aurez besoin de :</br></br> - 4cl Rhum ambré</br> - 4cl Jus d'orange</br> - 4cl Jus d'ananas</br> - 2cl Lait de coco</br> - 1 Boule de glace vanille</br> - Jus de citron",
     "degree": "",
     "ingredients": [
       "Rhum ambré", 
@@ -33,31 +33,31 @@
     ]
   },
   "Mai Tai": {
-    "description": "<h1>Le Mai Tai</h1>Préparez un Mai Tai avec ces ingrédients :</br></br> - Rhum blanc</br> - Rhum brun</br> - Jus de citron vert</br> - Sirop d'orgeat</br> - Liqueur d'orange</br> - Brin de menthe (pour la garniture)",
+    "description": "<h1>Le Mai Tai</h1>Préparez un Mai Tai avec ces ingrédients :</br></br> - 3cl de Rhum blanc</br> - 3cl de Rhum brun</br> - 3cl Jus de citron vert</br> - 1.5cl Sirop d'orgeat</br> - 1.5cl de Liqueur d'orange</br> - Brin de menthe (pour la garniture)",
     "degree": "",
     "ingredients": [
       "Rhum blanc",
-      "Rhum brun",
+      "Rhum ambré",
       "Jus de citron vert",
       "Sirop d'orgeat",
       "Liqueur d'orange",
+      "Sucre de canne",
       "Brin de menthe"
     ]
   },
   "Whiskey in the jar": {
-    "description": "<h1>Le Whiskey in the jar</h1>Pour préparer un Whiskey in the jar, vous aurez besoin de :</br></br> - Whiskey Bushmills</br> - Pêche mûre <i>ou</i> jus de pêche concentré</br> - Sucre en poudre <i>ou</i> Sirop de pêche</br> - Feuilles de menthe",
+    "description": "<h1>Le Whiskey in the jar</h1>Pour préparer un Whiskey in the jar, vous aurez besoin de :</br></br> - 12cl Whiskey Bushmills</br> - 3 à 4 Pêche mûre</br> - Sucre en poudre <i>ou</i> 4 cuillere à soupe de Sirop de pêche</br> - Feuilles de menthe</br> - 1/4 de verre de Lait concentré non sucré",
     "degree": "",
     "ingredients": [
       "Whiskey Bushmills", 
       "Pêche mûre", 
-      "Jus de pêche concentré", 
-      "Sucre en poudre",
-      "Sirop de pêche",
+      "Sucre en poudre ou Jus de pêche concentré",
+      "lait concentré non sucré",
       "Feuilles de menthe"
     ]
   },
   "Elevenses": {
-    "description": "<h1>L'Elevenses</h1>Pour préparer un Elevenses, vous aurez besoin de :</br></br> - Whiskey Tullamore</br> - Confiture de framboises</br> - Jus de citron</br> - Thé Irish breakfast",
+    "description": "<h1>L'Elevenses</h1>Pour préparer un Elevenses, vous aurez besoin de :</br></br> - 6cl Whiskey Tullamore</br> - 2 cuillerées de Confiture de framboises</br> - 2cl Jus de citron</br> - 5cl Thé Irish breakfast",
     "degree": "",
     "ingredients": [
       "Whiskey Tullamore", 
@@ -67,7 +67,7 @@
     ]
   },
   "Wapplesky": {
-    "description": "<h1>Le Wapplesky</h1>Pour préparer un Wapplesky, vous aurez besoin de :</br></br> - Whiskey écossais</br> - Jus de pomme</br> - Sirop de miel</br> - Angostura orange bitter",
+    "description": "<h1>Le Wapplesky</h1>Pour préparer un Wapplesky, vous aurez besoin de :</br></br> - 5cl Whiskey écossais</br> - 2.5cl Jus de pomme</br> - 1.5cl Sirop de miel</br> - 2 traits Angostura orange bitter",
     "degree": "",
     "ingredients": [
       "Whiskey écossais", 
@@ -77,28 +77,28 @@
     ]
   },
   "Lynchburg Lemonade": {
-    "description": "<h1>La Lynchburg Lemonade</h1>Pour préparer une Lynchburg Lemonade, vous aurez besoin de :</br></br> - Whiskey Jack Daniel's</br> - Jus de citron</br> - Sirop de sucre de canne</br> - Limonade",
+    "description": "<h1>La Lynchburg Lemonade</h1>Pour préparer une Lynchburg Lemonade, vous aurez besoin de :</br></br> - 4cl Whiskey Jack Daniel's</br> - 2cl de Triple sec</br> - 1cl Jus de citron</br> - 1cl Sirop de sucre de canne</br> - Complété avec la Limonade",
     "degree": "",
     "ingredients": [
-      "Whiskey Jack Daniel's", 
+      "Whiskey Jack Daniel's",
+      "Triple sec", 
       "Jus de citron", 
       "Sirop de sucre de canne", 
       "Limonade"
     ]
   },
   "Sex on the beach": {
-    "description": "<h1>Le Sex on the beach</h1>Pour préparer un Sex on the Beach, vous aurez besoin de :</br></br> - Vodka</br> - Jus d'orange</br> - Jus de cranberry</br> - Schnaps</br> - Orange",
+    "description": "<h1>Le Sex on the beach</h1>Pour préparer un Sex on the Beach, vous aurez besoin de :</br></br> - 3cl Vodka</br> - 5cl Jus d'orange</br> - 5cl Jus de cranberry</br> - 2cl Schnaps</br> - Orange",
     "degree": "",
     "ingredients": [
       "Vodka", 
       "Jus d'orange", 
       "Jus de cranberry", 
-      "Schnaps",
-      "Orange"
+      "Schnaps"
     ]
   },
   "Frescesa": {
-    "description": "<h1>La Frescesa</h1>Pour préparer une Frescesa, vous aurez besoin de :</br></br> - Vodka</br> - Citron vert</br> - Pêche</br> - Vanille</br> - Menthe",
+    "description": "<h1>La Frescesa</h1>Pour préparer une Frescesa, vous aurez besoin de :</br></br> - 7cl de Vodka</br> - 4cl de Citron vert</br> - 4cl de Pêche</br> - 1/2 gousse de Vanille ou 4cl d'arome vanille</br> - Queles feuilles de Menthe pour la décoration",
     "degree": "",
     "ingredients": [
       "Vodka", 
@@ -109,26 +109,16 @@
     ]
   },
   "Russe Blanche": {
-    "description": "<h1>La Russe Blanche</h1>Pour préparer une Russe Blanche, vous aurez besoin de :</br></br> - Vodka</br> - Liqueur de café</br> - Crème liquide entière",
+    "description": "<h1>La Russe Blanche</h1>Pour préparer une Russe Blanche, vous aurez besoin de :</br></br> - 6cl de Vodka</br> - 3cl de Liqueur de café</br> - 3cl de Crème liquide entière",
     "degree": "",
     "ingredients": [
       "Vodka", 
       "Liqueur de café", 
-      "Crème liquide"
-    ]
-  },
-  "Vodka de Noël": {
-    "description": "<h1>La Vodka de Noël</h1>Pour préparer une Vodka de Noël, vous aurez besoin de :</br></br> - Vodka</br> - Liqueur de café</br> - Coca</br> - Crème liquide",
-    "degree": "",
-    "ingredients": [
-      "Vodka", 
-      "Liqueur de café", 
-      "Coca", 
       "Crème liquide"
     ]
   },
   "Margarita": {
-    "description": "<h1>La Margarita</h1>Pour préparer une Margarita, vous aurez besoin de :</br></br> - Tequila</br> - Jus de citron vert</br> - Triple sec</br> - Sel</br> - Glaçons",
+    "description": "<h1>La Margarita</h1>Pour préparer une Margarita, vous aurez besoin de :</br></br> - 1.5cl de Tequila</br> - 3cl de Jus de citron vert</br> - 1.5cl de Triple sec</br> - Une pincé de Sel</br> - Glaçons",
     "degree": "",
     "ingredients": [
       "Tequila",
@@ -138,16 +128,16 @@
     ]
   },
   "Daiquiri": {
-    "description": "<h1>Le Daiquiri</h1>Pour préparer un Daiquiri, vous aurez besoin de :</br></br> - Rhum blanc</br> - Jus de citron</br> - Sucre",
+    "description": "<h1>Le Daiquiri</h1>Pour préparer un Daiquiri, vous aurez besoin de :</br></br> - 6cl de Rhum blanc</br> - 3cl de Jus de citron</br> - 3cl de Sucre de canne",
     "degree": "",
     "ingredients": [
       "Rhum blanc",
       "Jus de citron",
-      "Sucre"
+      "Sucre de canne"
     ]
   },
   "Mule de Moscou": {
-    "description": "<h1>La Mule de Moscou</h1>Pour préparer une Mule de Moscou, vous aurez besoin de :</br></br> - Vodka</br> - Jus de citron</br> - Ginger beer</br> - Glaçons</br> - Tranches de citron vert",
+    "description": "<h1>La Mule de Moscou</h1>Pour préparer une Mule de Moscou, vous aurez besoin de :</br></br> - 4cl de Vodka</br> - 1cl de Jus de citron</br> - 12cl de Ginger beer</br> - Glaçons</br> - Tranches de citron vert",
     "degree": "",
     "ingredients": [
       "Vodka",
@@ -157,14 +147,13 @@
     ]
   },
   "Pisco Sour": {
-    "description": "<h1>Le Pisco Sour</h1>Pour préparer un Pisco Sour, vous aurez besoin de :</br></br> - Pisco</br> - Jus de citron</br> - Blanc d'œuf</br> - Sirop de sucre</br> - Angostura bitter",
+    "description": "<h1>Le Pisco Sour</h1>Pour préparer un Pisco Sour, vous aurez besoin de :</br></br> - 6cl Pisco</br> - 3cl Jus de citron</br> - 1 Blanc d'œuf</br> - 3cl de Sirop de sucre",
     "degree": "",
     "ingredients": [
       "Pisco",
       "Jus de citron",
       "Blanc d'œuf",
-      "Sirop de sucre",
-      "Angostura bitter"
+      "Sirop de sucre"
     ]
   },
   "Cosmopolitan": {
