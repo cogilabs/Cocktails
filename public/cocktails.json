@@ -1,7 +1,7 @@
 {
   "Mojito": {
     "description": "<h1>Le Mojito</h1>Pour préparer un Mojito, vous aurez besoin de :</br></br> - Rhum blanc</br> - Citron vert</br> - Sucre brun</br> - Feuilles de menthe</br> - Glace pilée</br> - Eau gazeuse",
-    "degree": "",
+    "degree": "30",
     "ingredients": [
       "Rhum blanc", 
       "Citron vert", 
@@ -12,7 +12,7 @@
   },
   "Mademoiselle": {
     "description": "<h1>Mademoiselle</h1>Pour préparer un Mademoiselle, vous aurez besoin de :</br></br> - Rhum arrangé</br> - Liqueur de grenade</br> - Liqueur de fleur de sureau</br> - Bitter cerise",
-    "degree": "",
+    "degree": "70",
     "ingredients": [
       "Rhum arrangé", 
       "Liqueur de grenade", 
@@ -22,7 +22,7 @@
   },
   "Aloha vanille": {
     "description": "<h1>L'Aloha vanille</h1>Pour préparer un Aloha vanille, vous aurez besoin de :</br></br> - Rhum ambré</br> - Jus d'orange</br> - Jus d'ananas</br> - Lait de coco</br> - Boule de glace vanille</br> - Jus de citron",
-    "degree": "",
+    "degree": "50",
     "ingredients": [
       "Rhum ambré", 
       "Jus d'orange", 
@@ -34,7 +34,7 @@
   },
   "Mai Tai": {
     "description": "<h1>Le Mai Tai</h1>Préparez un Mai Tai avec ces ingrédients :</br></br> - Rhum blanc</br> - Rhum brun</br> - Jus de citron vert</br> - Sirop d'orgeat</br> - Liqueur d'orange</br> - Brin de menthe (pour la garniture)",
-    "degree": "",
+    "degree": "100",
     "ingredients": [
       "Rhum blanc",
       "Rhum brun",
@@ -46,7 +46,7 @@
   },
   "Whiskey in the jar": {
     "description": "<h1>Le Whiskey in the jar</h1>Pour préparer un Whiskey in the jar, vous aurez besoin de :</br></br> - Whiskey Bushmills</br> - Pêche mûre <i>ou</i> jus de pêche concentré</br> - Sucre en poudre <i>ou</i> Sirop de pêche</br> - Feuilles de menthe",
-    "degree": "",
+    "degree": "10",
     "ingredients": [
       "Whiskey Bushmills", 
       "Pêche mûre", 
@@ -58,7 +58,7 @@
   },
   "Elevenses": {
     "description": "<h1>L'Elevenses</h1>Pour préparer un Elevenses, vous aurez besoin de :</br></br> - Whiskey Tullamore</br> - Confiture de framboises</br> - Jus de citron</br> - Thé Irish breakfast",
-    "degree": "",
+    "degree": "0",
     "ingredients": [
       "Whiskey Tullamore", 
       "Confiture de framboises", 
@@ -247,6 +247,7 @@
 },
 "Radioactive Long Island Iced Tea": {
   "description": "<h1>Le Radioactive Long Island Iced Tea</h1>Pour préparer un Radioactive Long Island Iced Tea, rassemblez ces ingrédients :</br></br> - Rhum blanc</br> - Mang fraiche (pour la garniture)</br> - Jus de citron vert</br> - Feuilles de menthe</br> - Eau gazeuse",
+  "degree": "",
   "ingredients": [
     "Rhum blanc",
     "Mang fraiche",

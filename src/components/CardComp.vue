@@ -1,12 +1,13 @@
 <template>
-  <div v-show="displayed" v-bind:class="{selClass: isSelected}" @click="toggleSelected">
+  <div v-show="displayed" v-bind:class="{selClass: isSelected, greyedOutClass: greyedOut, specialClass: special}" @click="toggleSelected">
     <h4>{{ name }}</h4>
+    <p>{{ degVal }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['name','isSelected','displayed'],
+  props: ['name','isSelected','displayed','greyedOut','special','degVal'],
   methods: {
     toggleSelected() {
       this.$emit('toggle-selected', this.name);
@@ -26,7 +27,7 @@ export default {
     margin: 10px;
     text-align: center;
   }
-  div:hover {
-    cursor: pointer;
+  p {
+    font-size: smaller;
   }
 </style>
