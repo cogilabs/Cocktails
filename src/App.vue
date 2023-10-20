@@ -97,6 +97,7 @@
         const response = await fetch("cocktails.json");
         const json = await response.json();
         const ingList = new Array();
+        let h = 0
         for (const i in json) {
           this.cocktails.push({
             name: i, 
@@ -106,11 +107,16 @@
             degree: json[i].degree,
             displayed: true,
             special: true,
-            degVal: json[i].degree/20, // Goal: 🍹🍹🍹🍸🍸
+            degVal: "",
           });
-
-          //if (this.cocktails.degree > 0)
-
+          if (parseInt(this.cocktails[h].degree) > 0) {
+            var score = "";
+            for (let j = 0; j < json[i].degree/20; j++) {
+              score = score + "🍹"
+            }
+            this.cocktails[h].degVal = score
+          }
+          h++
           this.cocktails.sort((a, b) => {
             return (a.name).localeCompare(b.name);
           });
@@ -193,7 +199,13 @@
             selectedIngs.push(this.ings[i].name)
             for (const j in this.cocktails) {
               if (this.cocktails[j].degree > 0) {
-                this.cocktails[j].degVal = this.cocktails[j].degree/20
+                if (parseInt(this.cocktails[j].degree) > 0) {
+                  var score = "";
+                  for (let j = 0; j < this.cocktails[j].degree/20; j++) {
+                    score = score + "🍹"
+                  }
+                  this.cocktails[j].degVal = score
+                }
               }
               if (this.cocktails[j].ingredients.includes(this.ings[i].name)) {
                 possibleCocktails.push(this.cocktails[j].name)
