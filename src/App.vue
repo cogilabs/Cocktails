@@ -34,6 +34,7 @@
         <div class="sectionTitle">
           <h1>Cocktails</h1>
         </div>
+        <input type="text" v-if="selectedIngsComp == 0" v-model="cocktailSearch" v-on:input="listCocktails(cocktailSearch)" placeholder="Entrez un cocktail">
       <div class="cocktailInt">
         <transition-group name="fade">
           <card-comp 
@@ -86,11 +87,24 @@
         ings: [],
         cocktails: [],
         details: "",
-        ingSearch: ""
+        ingSearch: "",
+        cocktailSearch: ""
       };
     },
     mounted() {
       this.fetchData();
+    },
+    computed: {
+      selectedIngsComp() {
+        const selectedIngs = new Array();
+        for (const i in this.ings) {
+          if (this.ings[i].isSelected == true) {
+            selectedIngs.push(this.ings[i].name)
+          }
+        }
+        console.log(selectedIngs.length)
+        return selectedIngs.length;
+      }
     },
     methods: {
       async fetchData() {
@@ -149,6 +163,7 @@
       },
       receiveEmit(divId) {
         this.ingSearch = ""
+        this.cocktailSearch = ""
         let isCocktail = false;
         let foundObject = this.ings.find(
           ing => ing.name === divId
@@ -190,7 +205,20 @@
             }
           }
       },
-      listCocktails() {
+      listCocktails(searchParams) {
+        if (searchParams) {
+          const allCocktails = new Array();
+          for (const i in this.cocktails) {
+            this.cocktails[i].displayed = false;
+            allCocktails.push(this.cocktails[i].name)
+          }
+          for (const i in allCocktails) {
+            if (allCocktails[i].toLowerCase().includes(searchParams.toLowerCase())) {
+              this.cocktails[i].displayed = true
+            }
+          }
+          return
+        }
         let checker = (arr, target) => target.every(v => arr.includes(v));
         const selectedIngs = new Array();
         const possibleCocktails = new Array();
@@ -313,7 +341,7 @@
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2)
   }
   .cocktailInt > div:not(.selClass):not(.specialClass) {
-    background-color: #fff07c;
+    background-color: #ffe95e;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2)
   }
   .selClass {
