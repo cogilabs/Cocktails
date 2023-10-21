@@ -9,9 +9,21 @@
         <transition-group name="fade">
           <card-comp 
             v-for="x in ings"
+            :key="'ingredientSel-' + x.name"
+            :name="x.name"
+            :displayed="(x.displayed && x.isSelected)"
+            :is-selected="x.isSelected"
+            @toggle-selected="receiveEmit"
+          />
+        </transition-group>
+      </div>
+      <div class="ingInt">
+        <transition-group name="fade">
+          <card-comp 
+            v-for="x in ings"
             :key="'ingredient-' + x.name"
             :name="x.name"
-            :displayed="x.displayed"
+            :displayed="x.displayed && !x.isSelected"
             :is-selected="x.isSelected"
             @toggle-selected="receiveEmit"
           />
@@ -22,14 +34,31 @@
         <div class="sectionTitle">
           <h1>Cocktails</h1>
         </div>
+        <input type="text" v-if="selectedIngsComp == 0" v-model="cocktailSearch" v-on:input="listCocktails(cocktailSearch)" placeholder="Entrez un cocktail">
       <div class="cocktailInt">
         <transition-group name="fade">
           <card-comp 
-            v-for="x in filteredCocktails"
+            v-for="x in cocktails"
             :key="'cocktail-' + x.name"
             :name="x.name"
             :displayed="x.displayed"
+            :special="x.special"
             :is-selected="x.isSelected"
+            :deg-val="x.degVal"
+            @toggle-selected="receiveEmit"
+          />
+        </transition-group>
+      </div>
+      <div>
+        <transition-group name="fade">
+          <card-comp 
+            v-for="x in cocktails"
+            :key="'cocktailGreyedOut-' + x.name"
+            :name="x.name"
+            :displayed="!(x.displayed)"
+            :greyedOut="!(x.displayed)"
+            :is-selected="x.isSelected"
+            :deg-val="x.degVal"
             @toggle-selected="receiveEmit"
           />
         </transition-group>
@@ -58,15 +87,23 @@
         ings: [],
         cocktails: [],
         details: "",
-        ingSearch: ""
+        ingSearch: "",
+        cocktailSearch: ""
       };
     },
     mounted() {
       this.fetchData();
     },
     computed: {
-      filteredCocktails() {
-        return this.cocktails.filter(cocktail => cocktail.displayed);
+      selectedIngsComp() {
+        const selectedIngs = new Array();
+        for (const i in this.ings) {
+          if (this.ings[i].isSelected == true) {
+            selectedIngs.push(this.ings[i].name)
+          }
+        }
+        console.log(selectedIngs.length)
+        return selectedIngs.length;
       }
     },
     methods: {
@@ -74,14 +111,26 @@
         const response = await fetch("cocktails.json");
         const json = await response.json();
         const ingList = new Array();
+        let h = 0
         for (const i in json) {
           this.cocktails.push({
             name: i, 
             isSelected: false, 
             ingredients: json[i].ingredients, 
             description: json[i].description,
-            displayed: true
+            degree: json[i].degree,
+            displayed: true,
+            special: true,
+            degVal: "",
           });
+          if (parseInt(this.cocktails[h].degree) > 0) {
+            var score = "";
+            for (let j = 0; j < json[i].degree/20; j++) {
+              score = score + "🍹"
+            }
+            this.cocktails[h].degVal = score
+          }
+          h++
           this.cocktails.sort((a, b) => {
             return (a.name).localeCompare(b.name);
           });
@@ -114,6 +163,7 @@
       },
       receiveEmit(divId) {
         this.ingSearch = ""
+        this.cocktailSearch = ""
         let isCocktail = false;
         let foundObject = this.ings.find(
           ing => ing.name === divId
@@ -155,17 +205,54 @@
             }
           }
       },
-      listCocktails() {
+      listCocktails(searchParams) {
+        if (searchParams) {
+          const allCocktails = new Array();
+          for (const i in this.cocktails) {
+            this.cocktails[i].displayed = false;
+            allCocktails.push(this.cocktails[i].name)
+          }
+          for (const i in allCocktails) {
+            if (allCocktails[i].toLowerCase().includes(searchParams.toLowerCase())) {
+              this.cocktails[i].displayed = true
+            }
+          }
+          return
+        }
         let checker = (arr, target) => target.every(v => arr.includes(v));
         const selectedIngs = new Array();
+        const possibleCocktails = new Array();
         for (const i in this.ings) {
           if (this.ings[i].isSelected == true) {
-              selectedIngs.push(this.ings[i].name)
+            selectedIngs.push(this.ings[i].name)
+            for (const j in this.cocktails) {
+              if (this.cocktails[j].degree > 0) {
+                if (parseInt(this.cocktails[j].degree) > 0) {
+                  var score = "";
+                  for (let j = 0; j < this.cocktails[j].degree/20; j++) {
+                    score = score + "🍹"
+                  }
+                  this.cocktails[j].degVal = score
+                }
+              }
+              if (this.cocktails[j].ingredients.includes(this.ings[i].name)) {
+                possibleCocktails.push(this.cocktails[j].name)
+              }
+            }
           }
         }
         for (const i in this.cocktails) {
-          this.cocktails[i].displayed = checker(this.cocktails[i].ingredients, selectedIngs)
+          this.cocktails[i].special = false
+          this.cocktails[i].displayed = (checker(this.cocktails[i].ingredients, selectedIngs) || possibleCocktails.includes(this.cocktails[i].name))
+          if (selectedIngs.length != 0) {
+            if (!(checker(this.cocktails[i].ingredients, selectedIngs))) {
+              this.cocktails[i].special = possibleCocktails.includes(this.cocktails[i].name)
+            }
+          } else { 
+            this.cocktails[i].special = true
+          }
         }
+
         this.reListIngs()
       },
       reListIngs(searchParams) {
@@ -178,16 +265,8 @@
           allIngs.push(this.ings[i].name)
         }
         for (const i in allIngs) {
-          for (const j in this.cocktails) {
-            for (const k in this.cocktails[j].ingredients) {
-              if (this.cocktails[j].displayed) {
-                if (this.cocktails[j].ingredients.includes(allIngs[i])) {
-                  if (allIngs[i].toLowerCase().includes(searchParams.toLowerCase())) {
-                    this.ings[i].displayed = true
-                  }
-                }
-              }
-            }
+          if (allIngs[i].toLowerCase().includes(searchParams.toLowerCase())) {
+            this.ings[i].displayed = true
           }
         }
       }
@@ -257,13 +336,28 @@
     margin-block-start: 1em;
     margin-block-end: 1em;
   }
-  .ingInt > div:not(.selClass), .cocktailInt > div:not(.selClass) {
+  .ingInt > div:not(.selClass) {
     background-color: #ede4d1;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2)
+  }
+  .cocktailInt > div:not(.selClass):not(.specialClass) {
+    background-color: #ffe95e;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2)
   }
   .selClass {
     background-color: #f4b126;
     box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+  }
+  .greyedOutClass {
+    background-color: #777777;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
+  }
+  .specialClass:not(.selClass) {
+    background-color: #ede4d1;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
+  }
+  .cocktailInt > div:hover, .ingInt > div:hover {
+    cursor: pointer;
   }
   input {
     height: fit-content;
