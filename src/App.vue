@@ -408,9 +408,13 @@
   }
 
   @media only screen and (max-width: 768px) {
-    .ing, .cocktail, .details {
+    .ing, .cocktail {
       width: 100%;
       height: 33%;
+    }
+    .details {
+      width: 100%;
+      height: 100%;
     }
     .cocktail, .details {
       border-left: unset;
