@@ -30,7 +30,7 @@ export default {
   p {
     font-size: smaller;
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1000px) {
     div {
       padding: 2px;
       margin-top: 2px;

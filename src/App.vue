@@ -407,7 +407,7 @@
     height: 100%;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1000px) {
     .sectionTitle {
       width: 100%;
       display: flex;
@@ -438,7 +438,7 @@
     }
   }
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 600px) {
     .ing, .cocktail {
       width: 100%;
       height: 33%;

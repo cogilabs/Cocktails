@@ -56,7 +56,7 @@
   .greyedOutClass {
     max-width: 150px;
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1000px) {
     div {
       padding: 0;
     }
@@ -71,7 +71,7 @@
       font-size: 15px;
     }
   }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 600px) {
     .legend {
       max-width: 45vw;
     }
