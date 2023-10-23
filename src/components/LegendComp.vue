@@ -31,15 +31,26 @@ div {
   flex-wrap: wrap;
   justify-content: space-around;
   height: fit-content;
+  width: fit-content;
 }
 .legend {
   color: #494c50;
   width: fit-content;
   height: fit-content;
   padding: 10px;
-  margin-top: 10px;
   border-radius: 10px;
   margin: 10px;
   text-align: center;
 }
+  @media only screen and (max-width: 768px) {
+    div {
+      padding: 0;
+    }
+    .legend {
+      padding: 2px;
+      margin-top: 2px;
+      border-radius: 10px;
+      margin: 2px;
+    }
+  }
 </style>

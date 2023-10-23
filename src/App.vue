@@ -371,6 +371,9 @@
   .cocktailInt > div:hover, .ingInt > div:hover {
     cursor: pointer;
   }
+  .detailsInt * {
+    width: 30vw;
+  }
   input {
     height: fit-content;
     width: 30vw;
@@ -402,5 +405,44 @@
     z-index:-1;
     width: 100%;
     height: 100%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .ing, .cocktail, .details {
+      width: 100%;
+      height: 33%;
+    }
+    .cocktail, .details {
+      border-left: unset;
+      border-top: solid #f4b126;
+    }
+    .sectionTitle {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+    }
+    .sectionTitle > h1 {
+      width: 100%;
+      padding: 0;
+      border-radius: 0;
+      font-size: 25px
+    }
+    .ing > div, .cocktail > div, .details > div {
+      padding: 0;
+    }
+    .detailsInt * {
+      width: 90vw;
+    }
+    .detailsContent {
+      margin-bottom: 15vh;
+    }
+    input {
+      width: 100vw;
+      margin-top: 0
+    }
   }
 </style>
