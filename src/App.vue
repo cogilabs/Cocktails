@@ -66,13 +66,21 @@
     </div>
     <div class="details">
         <div class="sectionTitle">
-          <h1>Détails et recette</h1>
+          <h1 v-show="this.details.text">Détails et recette</h1>
+          <h1 v-show="!this.details.text">Légende</h1>
         </div>
       <div class="detailsInt">
         <transition name="fade">
         <details-comp 
           v-if="details"
-          :details="details"
+          :cocktailName="details.title"
+          :cocktailABV="details.abv"
+          :details="details.text"
+        />
+        </transition>
+        <transition name="fade">
+        <legend-comp
+          v-if="!details.text"
         />
         </transition>
       </div>
@@ -86,9 +94,14 @@
       return {
         ings: [],
         cocktails: [],
-        details: "",
+        details: {
+          title: "",
+          abv: "",
+          text: "",
+        },
         ingSearch: "",
-        cocktailSearch: ""
+        cocktailSearch: "",
+        maxAbv: 30, // The ABV considered like a five star cocktail
       };
     },
     mounted() {
@@ -102,7 +115,6 @@
             selectedIngs.push(this.ings[i].name)
           }
         }
-        console.log(selectedIngs.length)
         return selectedIngs.length;
       }
     },
@@ -111,9 +123,7 @@
         const response = await fetch("cocktails.json");
         const json = await response.json();
         const ingList = new Array();
-        const maxAbv = 30; // The ABV considered like a five star cocktail
         for (const i in json) {
-          console.log(parseInt(json[i].degree) +20)
           this.cocktails.push({
             name: i, 
             isSelected: false, 
@@ -122,7 +132,7 @@
             degree: json[i].degree,
             displayed: true,
             special: true,
-            degVal: "🍹".repeat((parseInt(json[i].degree) + (maxAbv*0.2)) / (maxAbv*0.2)),
+            degVal: "🍹".repeat((parseInt(json[i].degree) + (this.maxAbv*0.2)) / (this.maxAbv*0.2)),
           });
           this.cocktails.sort((a, b) => {
             return (a.name).localeCompare(b.name);
@@ -175,15 +185,27 @@
             }
           }
           if (foundObject.isSelected){
-            this.details = foundObject.description
+            this.details = {
+              title: foundObject.name,
+              abv: foundObject.degree,
+              text: foundObject.description,
+            }
           } else {
-            this.details = ""
+            this.details = {
+              title: "",
+              abv: "",
+              text: "",
+            }
           }
         } else {
           for (const i in this.cocktails) {
             if (!this.cocktails[i].displayed) {
               if (this.cocktails[i].isSelected == true) {
-                this.details = "";
+                this.details = {
+                  title: "",
+                  abv: "",
+                  text: "",
+                }
               }
               this.cocktails[i].isSelected = false;
             }
@@ -193,7 +215,11 @@
           for (const i in this.cocktails) {
             if (!this.cocktails[i].displayed) {
               if (this.cocktails[i].isSelected == true) {
-                this.details = "";
+                this.details = {
+                  title: "",
+                  abv: "",
+                  text: "",
+                }
               }
             }
           }
@@ -219,15 +245,7 @@
           if (this.ings[i].isSelected == true) {
             selectedIngs.push(this.ings[i].name)
             for (const j in this.cocktails) {
-              if (this.cocktails[j].degree > 0) {
-                if (parseInt(this.cocktails[j].degree) > 0) {
-                  var score = "";
-                  for (let j = 0; j < this.cocktails[j].degree/20; j++) {
-                    score = score + "🍹"
-                  }
-                  this.cocktails[j].degVal = score
-                }
-              }
+              this.cocktails[j].degVal = "🍹".repeat((parseInt(this.cocktails[j].degree) + (this.maxAbv*0.2)) / (this.maxAbv*0.2))
               if (this.cocktails[j].ingredients.includes(this.ings[i].name)) {
                 possibleCocktails.push(this.cocktails[j].name)
               }
@@ -344,6 +362,7 @@
   .greyedOutClass {
     background-color: #777777;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
+    max-width: 120px;
   }
   .specialClass:not(.selClass) {
     background-color: #ede4d1;
