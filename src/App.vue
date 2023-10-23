@@ -44,7 +44,7 @@
             :displayed="x.displayed"
             :special="x.special"
             :is-selected="x.isSelected"
-            :deg-val="x.degVal"
+            :deg-val="x.abvScore"
             @toggle-selected="receiveEmit"
           />
         </transition-group>
@@ -58,7 +58,7 @@
             :displayed="!(x.displayed)"
             :greyedOut="!(x.displayed)"
             :is-selected="x.isSelected"
-            :deg-val="x.degVal"
+            :deg-val="x.abvScore"
             @toggle-selected="receiveEmit"
           />
         </transition-group>
@@ -129,10 +129,10 @@
             isSelected: false, 
             ingredients: json[i].ingredients, 
             description: json[i].description,
-            degree: json[i].degree,
+            abv: json[i].abv,
             displayed: true,
             special: true,
-            degVal: "🍹".repeat((parseInt(json[i].degree) + (this.maxAbv*0.2)) / (this.maxAbv*0.2)),
+            abvScore: "🍹".repeat((parseInt(json[i].abv) + (this.maxAbv*0.2)) / (this.maxAbv*0.2)),
           });
           this.cocktails.sort((a, b) => {
             return (a.name).localeCompare(b.name);
@@ -187,7 +187,7 @@
           if (foundObject.isSelected){
             this.details = {
               title: foundObject.name,
-              abv: foundObject.degree,
+              abv: foundObject.abv,
               text: foundObject.description,
             }
           } else {
@@ -245,7 +245,7 @@
           if (this.ings[i].isSelected == true) {
             selectedIngs.push(this.ings[i].name)
             for (const j in this.cocktails) {
-              this.cocktails[j].degVal = "🍹".repeat((parseInt(this.cocktails[j].degree) + (this.maxAbv*0.2)) / (this.maxAbv*0.2))
+              this.cocktails[j].abvScore = "🍹".repeat((parseInt(this.cocktails[j].abv) + (this.maxAbv*0.2)) / (this.maxAbv*0.2))
               if (this.cocktails[j].ingredients.includes(this.ings[i].name)) {
                 possibleCocktails.push(this.cocktails[j].name)
               }
