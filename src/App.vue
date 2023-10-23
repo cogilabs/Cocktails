@@ -408,18 +408,6 @@
   }
 
   @media only screen and (max-width: 768px) {
-    .ing, .cocktail {
-      width: 100%;
-      height: 33%;
-    }
-    .details {
-      width: 100%;
-      height: 100%;
-    }
-    .cocktail, .details {
-      border-left: unset;
-      border-top: solid #f4b126;
-    }
     .sectionTitle {
       width: 100%;
       display: flex;
@@ -439,14 +427,35 @@
       padding: 0;
     }
     .detailsInt * {
-      width: 90vw;
+      width: 30vw;
     }
     .detailsContent {
-      margin-bottom: 15vh;
+      margin-bottom: 25vh;
     }
     input {
       width: 100vw;
       margin-top: 0
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .ing, .cocktail {
+      width: 100%;
+      height: 33%;
+    }
+    .details {
+      width: 100%;
+      height: 100%;
+    }
+    .cocktail, .details {
+      border-left: unset;
+      border-top: solid #f4b126;
+    }
+    .detailsInt * {
+      width: 90vw;
+    }
+    .detailsContent {
+      margin-bottom: 0;
     }
   }
 </style>
