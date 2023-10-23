@@ -5,7 +5,7 @@
           <h1>Ingrédients</h1>
         </div>
       <input type="text" v-model="ingSearch" v-on:input="reListIngs(ingSearch)" placeholder="Entrez un ingrédient">
-      <div class="ingInt">
+      <div class="ingInt" v-show="selectedIngsComp > 0">
         <transition-group name="fade">
           <card-comp 
             v-for="x in ings"
