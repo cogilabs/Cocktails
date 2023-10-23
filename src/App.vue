@@ -13,6 +13,7 @@
             :name="x.name"
             :displayed="(x.displayed && x.isSelected)"
             :is-selected="x.isSelected"
+            :type="'ingredient'"
             @toggle-selected="receiveEmit"
           />
         </transition-group>
@@ -25,6 +26,7 @@
             :name="x.name"
             :displayed="x.displayed && !x.isSelected"
             :is-selected="x.isSelected"
+            :type="'ingredient'"
             @toggle-selected="receiveEmit"
           />
         </transition-group>
@@ -44,7 +46,8 @@
             :displayed="x.displayed"
             :special="x.special"
             :is-selected="x.isSelected"
-            :deg-val="x.abvScore"
+            :abv-score="x.abvScore"
+            :type="'cocktail'"
             @toggle-selected="receiveEmit"
           />
         </transition-group>
@@ -57,9 +60,7 @@
             :name="x.name"
             :displayed="!(x.displayed)"
             :greyedOut="!(x.displayed)"
-            :is-selected="x.isSelected"
-            :deg-val="x.abvScore"
-            @toggle-selected="receiveEmit"
+            :abv-score="x.abvScore"
           />
         </transition-group>
       </div>
@@ -164,21 +165,16 @@
           return (a.name).localeCompare(b.name);
         });
       },
-      receiveEmit(divId) {
+      receiveEmit(divType, divId) {
         this.ingSearch = ""
         this.cocktailSearch = ""
-        let isCocktail = false;
-        let foundObject = this.ings.find(
-          ing => ing.name === divId
-        );
-        if (foundObject == undefined) {
+        let foundObject = ""
+
+        if (divType == "cocktail") {
           foundObject = this.cocktails.find(
             cocktail => cocktail.name === divId
           );
-          isCocktail = true;
-        }
-        if (foundObject.displayed) foundObject.isSelected = !foundObject.isSelected;
-        if (isCocktail) {
+          if (foundObject.displayed) foundObject.isSelected = !foundObject.isSelected;
           for (const i in this.cocktails) {
             if (this.cocktails[i] != foundObject) {
               this.cocktails[i].isSelected = false;
@@ -198,6 +194,10 @@
             }
           }
         } else {
+          foundObject = this.ings.find(
+            ing => ing.name === divId
+          );
+          if (foundObject.displayed) foundObject.isSelected = !foundObject.isSelected;
           for (const i in this.cocktails) {
             if (!this.cocktails[i].displayed) {
               if (this.cocktails[i].isSelected == true) {
