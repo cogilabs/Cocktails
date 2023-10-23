@@ -364,6 +364,9 @@
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
     max-width: 120px;
   }
+  .greyedOutClass:hover {
+    cursor: default;
+  }
   .specialClass:not(.selClass) {
     background-color: #ede4d1;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);

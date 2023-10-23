@@ -56,6 +56,9 @@
   .greyedOutClass {
     max-width: 150px;
   }
+  div:hover {
+    cursor: default;
+  }
   @media only screen and (max-width: 1000px) {
     div {
       padding: 0;
