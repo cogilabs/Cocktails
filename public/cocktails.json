@@ -244,16 +244,16 @@
       "Feuilles de menthe",
       "Eau gazeuse"
     ]
-},
-"Radioactive Long Island Iced Tea": {
-  "description": "<h1>Le Radioactive Long Island Iced Tea</h1>Pour préparer un Radioactive Long Island Iced Tea, rassemblez ces ingrédients :</br></br> - Rhum blanc</br> - Mang fraiche (pour la garniture)</br> - Jus de citron vert</br> - Feuilles de menthe</br> - Eau gazeuse",
-  "degree": "",
-  "ingredients": [
-    "Rhum blanc",
-    "Mang fraiche",
-    "Jus de citron vert",
-    "Feuilles de menthe",
-    "Eau gazeuse"
-  ]
+  },
+  "Radioactive Long Island Iced Tea": {
+    "description": "<h1>Le Radioactive Long Island Iced Tea</h1>Pour préparer un Radioactive Long Island Iced Tea, rassemblez ces ingrédients :</br></br> - Rhum blanc</br> - Mang fraiche (pour la garniture)</br> - Jus de citron vert</br> - Feuilles de menthe</br> - Eau gazeuse",
+    "degree": "",
+    "ingredients": [
+      "Rhum blanc",
+      "Mang fraiche",
+      "Jus de citron vert",
+      "Feuilles de menthe",
+      "Eau gazeuse"
+    ]
   }
 }

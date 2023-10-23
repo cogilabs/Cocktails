@@ -111,8 +111,9 @@
         const response = await fetch("cocktails.json");
         const json = await response.json();
         const ingList = new Array();
-        let h = 0
+        const maxAbv = 30; // The ABV considered like a five star cocktail
         for (const i in json) {
+          console.log(parseInt(json[i].degree) +20)
           this.cocktails.push({
             name: i, 
             isSelected: false, 
@@ -121,16 +122,8 @@
             degree: json[i].degree,
             displayed: true,
             special: true,
-            degVal: "",
+            degVal: "🍹".repeat((parseInt(json[i].degree) + (maxAbv*0.2)) / (maxAbv*0.2)),
           });
-          if (parseInt(this.cocktails[h].degree) > 0) {
-            var score = "";
-            for (let j = 0; j < json[i].degree/20; j++) {
-              score = score + "🍹"
-            }
-            this.cocktails[h].degVal = score
-          }
-          h++
           this.cocktails.sort((a, b) => {
             return (a.name).localeCompare(b.name);
           });
