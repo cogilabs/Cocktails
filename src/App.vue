@@ -255,7 +255,7 @@
         for (const i in this.cocktails) {
           this.cocktails[i].special = false
           this.cocktails[i].displayed = (checker(this.cocktails[i].ingredients, selectedIngs) || possibleCocktails.includes(this.cocktails[i].name))
-          if (selectedIngs.length != 0) {
+          if (selectedIngs.length > 1) {
             if (!(checker(this.cocktails[i].ingredients, selectedIngs))) {
               this.cocktails[i].special = possibleCocktails.includes(this.cocktails[i].name)
             }
