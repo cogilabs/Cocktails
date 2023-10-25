@@ -6,7 +6,7 @@
         </div>
       <input type="text" v-model="ingSearch" v-on:input="reListIngs(ingSearch)" placeholder="Entrez un ingrédient">
       <div class="ingInt" v-show="selectedIngsComp > 0">
-      <button class="checkBtn" v-on:click="uncheckAllIngs()">Décocher tous les ingrédients</button>
+      <button class="checkBtn" v-on:click="uncheckAllIngs()">Déselectionner tous les ingrédients</button>
         <transition-group name="ingSel">
           <card-comp 
             v-for="x in ings"
