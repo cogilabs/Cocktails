@@ -458,7 +458,7 @@
       width: 90vw;
     }
     .detailsContent {
-      margin-bottom: 0;
+      margin-bottom: 25vh;
     }
   }
 </style>
