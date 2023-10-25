@@ -284,9 +284,7 @@
       },
       uncheckAllIngs() {
         for (const i in this.ings) {
-          console.log(this.ings[i])
           this.ings[i].isSelected = false;
-          console.log(this.ings[i])
           this.listCocktails();
         }
       }
@@ -478,6 +476,9 @@
       width: 100vw;
       margin-top: 0
     }
+    .checkBtn {
+      margin-top: 0
+    }
     .ing-enter-from, .ing-leave-to, .fadeMove-enter-from, .fadeMove-leave-to {
       transform: translateY(-90px);
     }
@@ -501,6 +502,10 @@
     }
     .detailsContent {
       margin-bottom: 25vh;
+    }
+    .checkBtn {
+      width: 100vw;
+      margin-top: 0
     }
   }
 </style>
