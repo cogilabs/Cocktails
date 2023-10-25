@@ -6,6 +6,7 @@
         </div>
       <input type="text" v-model="ingSearch" v-on:input="reListIngs(ingSearch)" placeholder="Entrez un ingrédient">
       <div class="ingInt" v-show="selectedIngsComp > 0">
+      <button class="checkBtn" v-on:click="uncheckAllIngs()">Décocher tous les ingrédients</button>
         <transition-group name="ingSel">
           <card-comp 
             v-for="x in ings"
@@ -279,6 +280,14 @@
           if (allIngs[i].toLowerCase().includes(searchParams.toLowerCase())) {
             this.ings[i].displayed = true
           }
+        }
+      },
+      uncheckAllIngs() {
+        for (const i in this.ings) {
+          console.log(this.ings[i])
+          this.ings[i].isSelected = false;
+          console.log(this.ings[i])
+          this.listCocktails();
         }
       }
     }
