@@ -6,7 +6,7 @@
         </div>
       <input type="text" v-model="ingSearch" v-on:input="reListIngs(ingSearch)" placeholder="Entrez un ingrédient">
       <div class="ingInt" v-show="selectedIngsComp > 0">
-        <transition-group name="fade">
+        <transition-group name="ingSel">
           <card-comp 
             v-for="x in ings"
             :key="'ingredientSel-' + x.name"
@@ -19,7 +19,7 @@
         </transition-group>
       </div>
       <div class="ingInt">
-        <transition-group name="fade">
+        <transition-group name="ing">
           <card-comp 
             v-for="x in ings"
             :key="'ingredient-' + x.name"
@@ -38,7 +38,7 @@
         </div>
         <input type="text" v-if="selectedIngsComp == 0" v-model="cocktailSearch" v-on:input="listCocktails(cocktailSearch)" placeholder="Entrez un cocktail">
       <div class="cocktailInt">
-        <transition-group name="fade">
+        <transition-group name="fadeMove">
           <card-comp 
             v-for="x in cocktails"
             :key="'cocktail-' + x.name"
@@ -53,7 +53,7 @@
         </transition-group>
       </div>
       <div>
-        <transition-group name="fade">
+        <transition-group name="fadeMove">
           <card-comp 
             v-for="x in cocktails"
             :key="'cocktailGreyedOut-' + x.name"
@@ -71,7 +71,7 @@
           <h1 v-show="!this.details.text">Légende</h1>
         </div>
       <div class="detailsInt">
-        <transition name="fade">
+        <transition name="fadeMove">
         <details-comp 
           v-if="details"
           :cocktailName="details.title"
@@ -79,7 +79,7 @@
           :details="details.text"
         />
         </transition>
-        <transition name="fade">
+        <transition name="fadeMove">
         <legend-comp
           v-if="!details.text"
         />
@@ -382,23 +382,53 @@
     width: 30vw;
     margin-top: 10px
   }
-
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity 0.7s, transform 0.7s;
+  .checkBtn {
+    height: fit-content;
+    width: 30vw;
   }
-  .fade-leave-active {
+
+  /*=========== Animations ============*/
+
+  .ingSel-enter-active {
+    transition: opacity cubic-bezier(1,-0,1,-2) 0.5s, transform 0.5s;
+  }
+  .ing-enter-from, .ing-leave-to {
+    transform: translateY(-120px);
+  }
+  .ing-leave-active {
     position: absolute;
   }
-  .fade-enter-from, .fade-leave-to {
-    opacity: 0;
-    transform: translateY(-20px);
+  .ing-move {
+    transition: all 0.5s
   }
-  .fade-enter-to, .fade-leave-from {
+
+  .ingSel-enter-from, .ingSel-leave-to {
+    opacity: 0;
+  }
+  .ingSel-enter-to, .ingSel-leave-from {
+    opacity: 1;
+  }
+  .ingSel-enter-active {
+    transition: opacity cubic-bezier(1,-0,1,-2) 0.5s;
+  }
+
+  .fadeMove-enter-active, .fadeMove-leave-active {
+    transition: opacity cubic-bezier(.3,1,.3,1) 0.5s, transform 0.5s;
+  }
+  .fadeMove-leave-active {
+    position: absolute;
+  }
+  .fadeMove-enter-from, .fadeMove-leave-to {
+    opacity: 0;
+    transform: translateY(-120px);
+  }
+  .fadeMove-enter-to, .fadeMove-leave-from {
     opacity: 1;
     transform: translateY(0);
   }
-  .fade-move {
-    transition: all 0.7s
+  .fadeMove-move {
+    transition: transform 0.5s;
+    transition-timing-function: cubic-bezier(0.42, 0, 1, 1); 
   }
 
   #dotsAndLinesCanvas {
@@ -438,6 +468,9 @@
     input {
       width: 100vw;
       margin-top: 0
+    }
+    .ing-enter-from, .ing-leave-to, .fadeMove-enter-from, .fadeMove-leave-to {
+      transform: translateY(-90px);
     }
   }
 
