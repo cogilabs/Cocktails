@@ -433,7 +433,7 @@
       width: 30vw;
     }
     .detailsContent {
-      margin-bottom: 25vh;
+      margin-bottom: 50vh;
     }
     input {
       width: 100vw;
