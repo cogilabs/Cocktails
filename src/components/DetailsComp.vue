@@ -26,17 +26,24 @@ export default {
         console.error('Error loading image:', error);
       }
     },
+
     async getImageUrl(cocktailId) {
       if (cocktailId === "") return null;
-      let response = await fetch("images/cocktails/" + cocktailId + ".png");
-      if (response.status === 200) {
-        return response.url;
-      } else {
-        response = await fetch("images/cocktails/" + cocktailId + ".jpg");
+      const loadImage = async (imageType) => {
+        const response = await fetch(`images/cocktails/${cocktailId}.${imageType}`);
         if (response.status === 200) {
           return response.url;
-        } else return null;
+        }
+      };
+      const imageTypes = ['jpg', 'jpeg', 'png'];
+      for (const imageType of imageTypes) {
+        const imageUrl = await loadImage(imageType);
+        if (imageUrl) {
+          return imageUrl;
+        }
       }
+      console.error('No image found for', cocktailId);
+      return null;
     }
   }
 }
@@ -49,6 +56,6 @@ export default {
     justify-content: center;
   }
   img {
-    width: 30%;
+    max-width: 45%;
   }
 </style>
