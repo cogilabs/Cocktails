@@ -3,6 +3,7 @@
     <h1>{{ cocktailName }} <span v-if="cocktailABV">({{ cocktailABV }}%)</span></h1>
     <p class="img"><img v-show="imgUrl" v-bind:src="imgUrl"></p>
     <div v-html="detailsText"></div>
+    <router-link :to="'/cocktails/' + cocktailName">View Details</router-link>
   </div>
 </template>
 
