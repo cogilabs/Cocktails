@@ -15,6 +15,10 @@ export default {
       imgUrl: null,
     };
   },
+  created() {
+    // Load the image when component updates
+    this.loadImage();
+  },
   updated() {
     // Load the image when component updates
     this.loadImage();
@@ -24,6 +28,7 @@ export default {
     async loadImage() {
       try {
         const imageUrl = await this.getImageUrl(this.cocktailName);
+        console.log(imageUrl)
         this.imgUrl = imageUrl;
       } catch (error) {
         console.error('Error loading image:', error);

@@ -2,14 +2,17 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 import App from './App.vue'
+
+import MainVue from './MainVue.vue'
 import CocktailDetails from './CocktailDetails.vue'
+
 import CardComp from './components/CardComp.vue'
 import DetailsComp from './components/DetailsComp.vue'
 import LegendComp from './components/LegendComp.vue'
 
 
 const routes = [
-  { path: '/', component: App },
+  { path: '/', component: MainVue },
   { path: '/cocktail/:id', component: CocktailDetails }
 ]
 
