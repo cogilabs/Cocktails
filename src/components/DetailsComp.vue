@@ -3,7 +3,7 @@
     <h1>{{ cocktailName }} <span v-if="cocktailABV">({{ cocktailABV }}%)</span></h1>
     <p class="img"><img v-show="imgUrl" v-bind:src="imgUrl"></p>
     <div v-html="detailsText"></div>
-    <router-link :to="'/cocktails/' + cocktailName">View Details</router-link>
+    <router-link :to="'/cocktail/' + cocktailName">View Details</router-link>
   </div>
 </template>
 
@@ -33,7 +33,7 @@ export default {
     async getImageUrl(cocktailId) {
       if (cocktailId === "") return null;
       const loadImage = async (imageType) => {
-        const response = await fetch(`images/cocktails/${cocktailId}.${imageType}`);
+        const response = await fetch(`/images/cocktails/${cocktailId}.${imageType}`);
         if (response.status === 200) {
           return response.url;
         }

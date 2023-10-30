@@ -2,16 +2,15 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 import App from './App.vue'
+import CocktailDetails from './CocktailDetails.vue'
 import CardComp from './components/CardComp.vue'
 import DetailsComp from './components/DetailsComp.vue'
 import LegendComp from './components/LegendComp.vue'
-import CocktailDetails from './components/CocktailDetails.vue'
-import YourComponentWithIngredientSearch from './components/YourComponentWithIngredientSearch.vue';
 
 
 const routes = [
-  { path: '/', component: YourComponentWithIngredientSearch },
-  { path: '/cocktails/:id', component: CocktailDetails }
+  { path: '/', component: App },
+  { path: '/cocktail/:id', component: CocktailDetails }
 ]
 
 const router = createRouter({

@@ -137,7 +137,7 @@
     methods: {
       async fetchData() {
         // Fetch cocktail data from a JSON file and populate ingredient and cocktail lists
-        const response = await fetch("cocktails.json");
+        const response = await fetch("/cocktails.json");
         const json = await response.json();
         const ingList = new Array();
         for (const i in json) {
