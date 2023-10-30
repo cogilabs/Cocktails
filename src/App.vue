@@ -1,6 +1,6 @@
 <template>
   <div class="master">
-    <div class="ingColumn">
+    <div class="ingColumn column">
       <!-- Ingredients Section -->
       <div class="sectionTitle">
         <h1>Ingrédients</h1>
@@ -38,7 +38,7 @@
         </transition-group>
       </div>
     </div>
-    <div class="cocktailColumn">
+    <div class="cocktailColumn column">
       <!-- Cocktails Section -->
       <div class="sectionTitle">
         <h1>Cocktails</h1>
@@ -74,13 +74,13 @@
         </transition-group>
       </div>
     </div>
-    <div class="detailsColumn">
+    <div class="detailsColumn column">
       <!-- Details Section -->
       <div class="sectionTitle">
         <h1 v-show="this.details.text">Détails et recette</h1>
         <h1 v-show="!this.details.text">Légende</h1>
       </div>
-      <div class="detailsInt">
+      <div class="detailsDiv">
         <transition name="fadeMove">
           <!-- Display cocktail details -->
           <details-comp 
@@ -227,7 +227,6 @@
                   text: "",
                 }
               }
-              this.cocktailList[i].isSelected = false;
             }
           }
         }
@@ -246,6 +245,11 @@
       },
       listCocktails(searchParams) {
         // Filter and display cocktails based on selected ingredients or search parameters
+        for (const i in this.cocktailList) {
+          if (!this.cocktailList[i].displayed) {
+            this.cocktailList[i].isSelected = false;
+          }
+        }
         if (searchParams) {
           const allCocktails = new Array();
           for (const i in this.cocktailList) {
@@ -324,6 +328,10 @@
     font-family: Helvetica, Arial, sans-serif;
     margin: 0;
   }
+  ::selection {
+    /* Disable the ability to select text (at least visually) */
+    background: #00000000;
+  }
   .sectionTitle {
     /* Styles for section titles */
     width: 100%;
@@ -349,7 +357,7 @@
     justify-content: space-around;
     height: 100vh;
   }
-  .ingColumn, .cocktailColumn, .detailsColumn {
+  .column {
     /* Styles for columns */
     width: 33%;
     display: flex;
@@ -362,7 +370,7 @@
   .cocktailColumn, .detailsColumn {
     border-left: solid #f4b126;
   }
-  .ingColumn > div, .cocktailColumn > div, .detailsColumn > div {
+  .column > div {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -397,7 +405,7 @@
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
     max-width: 120px;
   }
-  .greyedOutClass:hover {
+  .greyedOutClass:hover, .sectionTitle {
     cursor: default;
   }
   .specialClass:not(.selClass) {
@@ -407,13 +415,24 @@
   .cocktailDiv > div:hover, .ingDiv > div:hover {
     cursor: pointer;
   }
-  .detailsInt * {
+  .detailsDiv * {
     width: 30vw;
+  }
+  .detailsDiv:hover {
+    cursor: auto;
+  }
+  .detailsDiv::selection, .detailsDiv * ::selection {
+    background:goldenrod;
+    color: black;
   }
   input {
     height: fit-content;
     width: 30vw;
     margin-top: 10px
+  }
+  input::selection {
+    /* Reenable the ability to select text for input boxes */
+    background: lightsteelblue;
   }
   .uncheckBtn {
     height: fit-content;
@@ -491,10 +510,10 @@
       border-radius: 0;
       font-size: 25px
     }
-    .ingColumn > div, .cocktailColumn > div, .detailsColumn > div {
+    .column > div {
       padding: 0;
     }
-    .detailsInt * {
+    .detailsDiv * {
       width: 30vw;
     }
     .detailsContent {
@@ -527,7 +546,7 @@
       border-left: unset;
       border-top: solid #f4b126;
     }
-    .detailsInt * {
+    .detailsDiv * {
       width: 90vw;
     }
     .detailsContent {
