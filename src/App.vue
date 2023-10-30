@@ -421,9 +421,13 @@
   .detailsDiv:hover {
     cursor: auto;
   }
-  .detailsDiv::selection, .detailsDiv * ::selection {
-    background:goldenrod;
+  .detailsDiv *::selection {
+    background: goldenrod;
     color: black;
+  }
+  .legend *::selection {
+    background: #00000000;
+    color: unset;
   }
   input {
     height: fit-content;

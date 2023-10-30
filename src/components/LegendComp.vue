@@ -70,6 +70,9 @@
   /*=========== Tablet/landscape phone design ============*/
 
   @media only screen and (max-width: 1000px) {
+    *::selection {
+      background: #00000000;
+    }
     div {
       padding: 0;
     }
@@ -86,7 +89,7 @@
   }
 
   /*=========== Portrait phone design ============*/
-  
+
   @media only screen and (max-width: 600px) {
     .legend {
       max-width: 45vw;
