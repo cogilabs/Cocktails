@@ -1,14 +1,14 @@
 <template>
-  <div class="detailsContent" v-if="details">
+  <div class="detailsContent" v-if="detailsText">
     <h1>{{ cocktailName }} <span v-if="cocktailABV">({{ cocktailABV }}%)</span></h1>
     <p class="img"><img v-show="imgUrl" v-bind:src="imgUrl"></p>
-    <div v-html="details"></div>
+    <div v-html="detailsText"></div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['cocktailName', 'cocktailABV', 'details'],
+  props: ['cocktailName', 'cocktailABV', 'detailsText'],
   data() {
     return {
       imgUrl: null,

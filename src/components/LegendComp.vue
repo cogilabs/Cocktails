@@ -1,18 +1,18 @@
 <template>
   <div>
-    <div class="cocktailInt">
+    <div class="cocktailDiv">
       <div v-bind:class="{legend: true, specialClass: true}">
         <h3>Cocktail qui contient des ingrédients séléctionnés</h3>
         <p></p>
       </div>
     </div>
-    <div class="cocktailInt">
+    <div class="cocktailDiv">
       <div v-bind:class="{legend: true}">
         <h3>Cocktail qui contient <i>tous</i> les ingrédients sélectionnés</h3>
         <p>Si plusieurs ingrédients sont sélectionnés</p>
       </div>
     </div>
-    <div class="cocktailInt">
+    <div class="cocktailDiv">
       <div v-bind:class="{legend: true, selClass: true}">
         <h3>Cocktail / Ingrédient séléctionné</h3>
         <p></p>

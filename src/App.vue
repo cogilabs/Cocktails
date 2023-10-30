@@ -1,101 +1,113 @@
 <template>
   <div class="master">
-    <div class="ing">
-        <div class="sectionTitle">
-          <h1>Ingrédients</h1>
-        </div>
+    <div class="ingColumn">
+      <!-- Ingredients Section -->
+      <div class="sectionTitle">
+        <h1>Ingrédients</h1>
+      </div>
+      <!-- Input for ingredient search -->
       <input type="text" v-model="ingSearch" v-on:input="reListIngs(ingSearch)" placeholder="Entrez un ingrédient">
-      <div class="ingInt" v-show="selectedIngsComp > 0">
-      <button class="checkBtn" v-on:click="uncheckAllIngs()">Déselectionner tous les ingrédients</button>
+      <div class="ingDiv" v-show="selectedIngredientsCount > 0">
+        <!-- Button to deselect all ingredients -->
+        <button class="uncheckBtn" v-on:click="uncheckAllIngs()">Déselectionner tous les ingrédients</button>
+        <!-- List of selected ingredients -->
         <transition-group name="ingSel">
           <card-comp 
-            v-for="x in ings"
-            :key="'ingredientSel-' + x.name"
-            :name="x.name"
-            :displayed="(x.displayed && x.isSelected)"
-            :is-selected="x.isSelected"
+            v-for="ingredient in ingredientList"
+            :key="'ingredientSel-' + ingredient.name"
+            :name="ingredient.name"
+            :displayed="(ingredient.displayed && ingredient.isSelected)"
+            :is-selected="ingredient.isSelected"
             :type="'ingredient'"
             @toggle-selected="receiveEmit"
           />
         </transition-group>
       </div>
-      <div class="ingInt">
+      <!-- List of available ingredients -->
+      <div class="ingDiv">
         <transition-group name="ing">
           <card-comp 
-            v-for="x in ings"
-            :key="'ingredient-' + x.name"
-            :name="x.name"
-            :displayed="x.displayed && !x.isSelected"
-            :is-selected="x.isSelected"
+            v-for="ingredient in ingredientList"
+            :key="'ingredient-' + ingredient.name"
+            :name="ingredient.name"
+            :displayed="ingredient.displayed && !ingredient.isSelected"
+            :is-selected="ingredient.isSelected"
             :type="'ingredient'"
             @toggle-selected="receiveEmit"
           />
         </transition-group>
       </div>
     </div>
-    <div class="cocktail">
-        <div class="sectionTitle">
-          <h1>Cocktails</h1>
-        </div>
-        <input type="text" v-if="selectedIngsComp == 0" v-model="cocktailSearch" v-on:input="listCocktails(cocktailSearch)" placeholder="Entrez un cocktail">
-      <div class="cocktailInt">
+    <div class="cocktailColumn">
+      <!-- Cocktails Section -->
+      <div class="sectionTitle">
+        <h1>Cocktails</h1>
+      </div>
+      <input type="text" v-if="selectedIngredientsCount == 0" v-model="cocktailSearch" v-on:input="listCocktails(cocktailSearch)" placeholder="Entrez un cocktail">
+      <div class="cocktailDiv">
+        <!-- List of cocktails -->
         <transition-group name="fadeMove">
           <card-comp 
-            v-for="x in cocktails"
-            :key="'cocktail-' + x.name"
-            :name="x.name"
-            :displayed="x.displayed"
-            :special="x.special"
-            :is-selected="x.isSelected"
-            :abv-score="x.abvScore"
+            v-for="cocktail in cocktailList"
+            :key="'cocktail-' + cocktail.name"
+            :name="cocktail.name"
+            :displayed="cocktail.displayed"
+            :special="cocktail.special"
+            :is-selected="cocktail.isSelected"
+            :abv-score="cocktail.abvScore"
             :type="'cocktail'"
             @toggle-selected="receiveEmit"
           />
         </transition-group>
       </div>
       <div>
+        <!-- List of greyed-out cocktails -->
         <transition-group name="fadeMove">
           <card-comp 
-            v-for="x in cocktails"
-            :key="'cocktailGreyedOut-' + x.name"
-            :name="x.name"
-            :displayed="!(x.displayed)"
-            :greyedOut="!(x.displayed)"
-            :abv-score="x.abvScore"
+            v-for="cocktail in cocktailList"
+            :key="'cocktailGreyedOut-' + cocktail.name"
+            :name="cocktail.name"
+            :displayed="!(cocktail.displayed)"
+            :greyedOut="!(cocktail.displayed)"
+            :abv-score="cocktail.abvScore"
           />
         </transition-group>
       </div>
     </div>
-    <div class="details">
-        <div class="sectionTitle">
-          <h1 v-show="this.details.text">Détails et recette</h1>
-          <h1 v-show="!this.details.text">Légende</h1>
-        </div>
+    <div class="detailsColumn">
+      <!-- Details Section -->
+      <div class="sectionTitle">
+        <h1 v-show="this.details.text">Détails et recette</h1>
+        <h1 v-show="!this.details.text">Légende</h1>
+      </div>
       <div class="detailsInt">
         <transition name="fadeMove">
-        <details-comp 
-          v-if="details"
-          :cocktailName="details.title"
-          :cocktailABV="details.abv"
-          :details="details.text"
-        />
+          <!-- Display cocktail details -->
+          <details-comp 
+            v-if="details"
+            :cocktailName="details.title"
+            :cocktailABV="details.abv"
+            :detailsText="details.text"
+          />
         </transition>
         <transition name="fadeMove">
-        <legend-comp
-          v-if="!details.text"
-        />
+          <!-- Display legend if no cocktail is selected -->
+          <legend-comp
+            v-if="!details.text"
+          />
         </transition>
       </div>
     </div>
   </div>
-</template>   
+</template>
 
 <script>
   export default {
     data() {
       return {
-        ings: [],
-        cocktails: [],
+        // Data properties for ingredient and cocktail lists
+        ingredientList: [],
+        cocktailList: [],
         details: {
           title: "",
           abv: "",
@@ -103,30 +115,34 @@
         },
         ingSearch: "",
         cocktailSearch: "",
-        maxAbv: 30, // The ABV considered like a five star cocktail
+        maxAbv: 30, // The ABV considered like a five star cocktail, in %
       };
     },
     mounted() {
+      // Fetch initial data when the component is mounted
       this.fetchData();
     },
     computed: {
-      selectedIngsComp() {
-        const selectedIngs = new Array();
-        for (const i in this.ings) {
-          if (this.ings[i].isSelected == true) {
-            selectedIngs.push(this.ings[i].name)
+      selectedIngredientsCount() {
+        // Calculate the count of selected ingredients
+        const selectedIngredients = new Array();
+        for (const i in this.ingredientList) {
+          if (this.ingredientList[i].isSelected == true) {
+            selectedIngredients.push(this.ingredientList[i].name)
           }
         }
-        return selectedIngs.length;
+        return selectedIngredients.length;
       }
     },
     methods: {
       async fetchData() {
+        // Fetch cocktail data from a JSON file and populate ingredient and cocktail lists
         const response = await fetch("cocktails.json");
         const json = await response.json();
         const ingList = new Array();
         for (const i in json) {
-          this.cocktails.push({
+          // Populate cocktailList with data from the JSON file
+          this.cocktailList.push({
             name: i, 
             isSelected: false, 
             ingredients: json[i].ingredients, 
@@ -136,10 +152,11 @@
             special: true,
             abvScore: "🍹".repeat((parseInt(json[i].abv) + (this.maxAbv*0.2)) / (this.maxAbv*0.2)),
           });
-          this.cocktails.sort((a, b) => {
+          this.cocktailList.sort((a, b) => {
             return (a.name).localeCompare(b.name);
           });
           for (const j in json[i].ingredients) {
+            // Populate ingList with unique ingredients
             if (ingList.length) {
               let okToAdd = true;
               for (const k in ingList) {
@@ -156,29 +173,31 @@
           }
         }
         for (const i in ingList) {
-          this.ings.push({
+          // Populate ingredientList with data from ingList
+          this.ingredientList.push({
             name: ingList[i], 
             isSelected: false, 
             displayed: true
           });
         }
-        this.ings.sort((a, b) => {
+        this.ingredientList.sort((a, b) => {
           return (a.name).localeCompare(b.name);
         });
       },
       receiveEmit(divType, divId) {
+        // Handle the selection of ingredients or cocktails
         this.ingSearch = ""
         this.cocktailSearch = ""
         let foundObject = ""
 
         if (divType == "cocktail") {
-          foundObject = this.cocktails.find(
+          foundObject = this.cocktailList.find(
             cocktail => cocktail.name === divId
           );
           if (foundObject.displayed) foundObject.isSelected = !foundObject.isSelected;
-          for (const i in this.cocktails) {
-            if (this.cocktails[i] != foundObject) {
-              this.cocktails[i].isSelected = false;
+          for (const i in this.cocktailList) {
+            if (this.cocktailList[i] != foundObject) {
+              this.cocktailList[i].isSelected = false;
             }
           }
           if (foundObject.isSelected){
@@ -195,27 +214,27 @@
             }
           }
         } else {
-          foundObject = this.ings.find(
+          foundObject = this.ingredientList.find(
             ing => ing.name === divId
           );
           if (foundObject.displayed) foundObject.isSelected = !foundObject.isSelected;
-          for (const i in this.cocktails) {
-            if (!this.cocktails[i].displayed) {
-              if (this.cocktails[i].isSelected == true) {
+          for (const i in this.cocktailList) {
+            if (!this.cocktailList[i].displayed) {
+              if (this.cocktailList[i].isSelected == true) {
                 this.details = {
                   title: "",
                   abv: "",
                   text: "",
                 }
               }
-              this.cocktails[i].isSelected = false;
+              this.cocktailList[i].isSelected = false;
             }
           }
         }
         this.listCocktails();
-          for (const i in this.cocktails) {
-            if (!this.cocktails[i].displayed) {
-              if (this.cocktails[i].isSelected == true) {
+          for (const i in this.cocktailList) {
+            if (!this.cocktailList[i].displayed) {
+              if (this.cocktailList[i].isSelected == true) {
                 this.details = {
                   title: "",
                   abv: "",
@@ -226,65 +245,68 @@
           }
       },
       listCocktails(searchParams) {
+        // Filter and display cocktails based on selected ingredients or search parameters
         if (searchParams) {
           const allCocktails = new Array();
-          for (const i in this.cocktails) {
-            this.cocktails[i].displayed = false;
-            allCocktails.push(this.cocktails[i].name)
+          for (const i in this.cocktailList) {
+            this.cocktailList[i].displayed = false;
+            allCocktails.push(this.cocktailList[i].name)
           }
           for (const i in allCocktails) {
             if (allCocktails[i].toLowerCase().includes(searchParams.toLowerCase())) {
-              this.cocktails[i].displayed = true
+              this.cocktailList[i].displayed = true
             }
           }
           return
         }
-        let checker = (arr, target) => target.every(v => arr.includes(v));
-        const selectedIngs = new Array();
+        let containsAll = (arr, target) => target.every(v => arr.includes(v));
+        const selectedIngredients = new Array();
         const possibleCocktails = new Array();
-        for (const i in this.ings) {
-          if (this.ings[i].isSelected == true) {
-            selectedIngs.push(this.ings[i].name)
-            for (const j in this.cocktails) {
-              this.cocktails[j].abvScore = "🍹".repeat((parseInt(this.cocktails[j].abv) + (this.maxAbv*0.2)) / (this.maxAbv*0.2))
-              if (this.cocktails[j].ingredients.includes(this.ings[i].name)) {
-                possibleCocktails.push(this.cocktails[j].name)
+        for (const i in this.ingredientList) {
+          if (this.ingredientList[i].isSelected == true) {
+            selectedIngredients.push(this.ingredientList[i].name)
+            for (const j in this.cocktailList) {
+              this.cocktailList[j].abvScore = "🍹".repeat((parseInt(this.cocktailList[j].abv) + (this.maxAbv*0.2)) / (this.maxAbv*0.2))
+              if (this.cocktailList[j].ingredients.includes(this.ingredientList[i].name)) {
+                possibleCocktails.push(this.cocktailList[j].name)
               }
             }
           }
         }
-        for (const i in this.cocktails) {
-          this.cocktails[i].special = false
-          this.cocktails[i].displayed = (checker(this.cocktails[i].ingredients, selectedIngs) || possibleCocktails.includes(this.cocktails[i].name))
-          if (selectedIngs.length > 1) {
-            if (!(checker(this.cocktails[i].ingredients, selectedIngs))) {
-              this.cocktails[i].special = possibleCocktails.includes(this.cocktails[i].name)
+        for (const i in this.cocktailList) {
+          this.cocktailList[i].special = false
+          this.cocktailList[i].displayed = (containsAll(this.cocktailList[i].ingredients, selectedIngredients) || possibleCocktails.includes(this.cocktailList[i].name))
+          if (selectedIngredients.length > 1) {
+            if (!(containsAll(this.cocktailList[i].ingredients, selectedIngredients))) {
+              this.cocktailList[i].special = possibleCocktails.includes(this.cocktailList[i].name)
             }
           } else { 
-            this.cocktails[i].special = true
+            this.cocktailList[i].special = true
           }
         }
 
         this.reListIngs()
       },
       reListIngs(searchParams) {
+        // Filter and display ingredients based on search parameters
         if (!searchParams) {
           searchParams = ""
         }
         const allIngs = new Array();
-        for (const i in this.ings) {
-          this.ings[i].displayed = false;
-          allIngs.push(this.ings[i].name)
+        for (const i in this.ingredientList) {
+          this.ingredientList[i].displayed = false;
+          allIngs.push(this.ingredientList[i].name)
         }
         for (const i in allIngs) {
           if (allIngs[i].toLowerCase().includes(searchParams.toLowerCase())) {
-            this.ings[i].displayed = true
+            this.ingredientList[i].displayed = true
           }
         }
       },
       uncheckAllIngs() {
-        for (const i in this.ings) {
-          this.ings[i].isSelected = false;
+        // Deselect all ingredients and update the displayed cocktails
+        for (const i in this.ingredientList) {
+          this.ingredientList[i].isSelected = false;
           this.listCocktails();
         }
       }
@@ -294,6 +316,7 @@
 
 <style>
   body {
+    /* Global styles for the body */
     background-image: url(https://cogilabs.eu/Images/Pinstripe2.png);
     background-repeat: repeat;
     background-color: #18222c;
@@ -302,6 +325,7 @@
     margin: 0;
   }
   .sectionTitle {
+    /* Styles for section titles */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -318,13 +342,15 @@
     border-radius: 10px;
   }
   .master {
+    /* Styles for the main container */
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     height: 100vh;
   }
-  .ing, .cocktail, .details {
+  .ingColumn, .cocktailColumn, .detailsColumn {
+    /* Styles for columns */
     width: 33%;
     display: flex;
     flex-wrap: wrap;
@@ -333,32 +359,32 @@
     height: 100%;
     overflow-y: auto;
   }
-  .cocktail, .details {
+  .cocktailColumn, .detailsColumn {
     border-left: solid #f4b126;
   }
-  .ing > div, .cocktail > div, .details > div {
+  .ingColumn > div, .cocktailColumn > div, .detailsColumn > div {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     height: fit-content;
   }
-  .ingInt > div {
+  .ingDiv > div {
     max-width: 120px;
   }
-  .cocktailInt > div {
+  .cocktailDiv > div {
     max-width: 150px;
   }
-  .cocktailInt > div > h4 {
+  .cocktailDiv > div > h4 {
     font-size: 1.17em;
     margin-block-start: 1em;
     margin-block-end: 1em;
   }
-  .ingInt > div:not(.selClass) {
+  .ingDiv > div:not(.selClass) {
     background-color: #ede4d1;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2)
   }
-  .cocktailInt > div:not(.selClass):not(.specialClass) {
+  .cocktailDiv > div:not(.selClass):not(.specialClass) {
     background-color: #ffe95e;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2)
   }
@@ -378,7 +404,7 @@
     background-color: #ede4d1;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
   }
-  .cocktailInt > div:hover, .ingInt > div:hover {
+  .cocktailDiv > div:hover, .ingDiv > div:hover {
     cursor: pointer;
   }
   .detailsInt * {
@@ -389,7 +415,7 @@
     width: 30vw;
     margin-top: 10px
   }
-  .checkBtn {
+  .uncheckBtn {
     height: fit-content;
     width: 30vw;
   }
@@ -447,6 +473,8 @@
     height: 100%;
   }
 
+  /*=========== Tablet/landscape phone design ============*/
+
   @media only screen and (max-width: 1000px) {
     .sectionTitle {
       width: 100%;
@@ -463,7 +491,7 @@
       border-radius: 0;
       font-size: 25px
     }
-    .ing > div, .cocktail > div, .details > div {
+    .ingColumn > div, .cocktailColumn > div, .detailsColumn > div {
       padding: 0;
     }
     .detailsInt * {
@@ -476,7 +504,7 @@
       width: 100vw;
       margin-top: 0
     }
-    .checkBtn {
+    .uncheckBtn {
       margin-top: 0
     }
     .ing-enter-from, .ing-leave-to, .fadeMove-enter-from, .fadeMove-leave-to {
@@ -484,16 +512,18 @@
     }
   }
 
+  /*=========== Portrait phone design ============*/
+
   @media only screen and (max-width: 600px) {
-    .ing, .cocktail {
+    .ingColumn, .cocktailColumn {
       width: 100%;
       height: 33%;
     }
-    .details {
+    .detailsColumn {
       width: 100%;
       height: 100%;
     }
-    .cocktail, .details {
+    .cocktailColumn, .detailsColumn {
       border-left: unset;
       border-top: solid #f4b126;
     }
@@ -503,7 +533,7 @@
     .detailsContent {
       margin-bottom: 25vh;
     }
-    .checkBtn {
+    .uncheckBtn {
       width: 100vw;
       margin-top: 0
     }
