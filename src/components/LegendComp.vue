@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Legend for cocktails and ingredient selection -->
     <div class="cocktailDiv">
       <div v-bind:class="{legend: true, specialClass: true}">
         <h3>Cocktail qui contient des ingrédients séléctionnés</h3>
@@ -26,10 +27,12 @@
 </template>
 
 <script>
+  // No script content for the Legend component
 </script>
 
 <style scoped>
   div {
+    /* Styles for legend container */
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -38,13 +41,16 @@
     width: fit-content;
   }
   p {
+    /* Styles for text within the legend */
     font-size: small;
     margin-top: 2px;
   }
   h3 {
+    /* Styles for heading within the legend */
     margin-bottom: 0;
   }
   .legend {
+    /* Styles for the legend boxes */
     color: #494c50;
     width: fit-content;
     height: fit-content;
@@ -57,8 +63,12 @@
     max-width: 150px;
   }
   div:hover {
+    /* Cursor style for hovering */
     cursor: default;
   }
+
+  /*=========== Tablet/landscape phone design ============*/
+
   @media only screen and (max-width: 1000px) {
     div {
       padding: 0;
@@ -74,6 +84,9 @@
       font-size: 15px;
     }
   }
+
+  /*=========== Portrait phone design ============*/
+  
   @media only screen and (max-width: 600px) {
     .legend {
       max-width: 45vw;

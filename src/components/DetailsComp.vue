@@ -15,9 +15,11 @@ export default {
     };
   },
   updated() {
+    // Load the image when component updates
     this.loadImage();
   },
   methods: {
+    // Load the cocktail image
     async loadImage() {
       try {
         const imageUrl = await this.getImageUrl(this.cocktailName);
@@ -51,11 +53,13 @@ export default {
 
 <style scoped>
   .img {    
+    /* Styles for the image container */
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
   img {
+    /* Styles for the image */
     max-width: 45%;
   }
 </style>
