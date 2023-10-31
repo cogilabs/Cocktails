@@ -54,18 +54,7 @@ export default {
 };
 </script>
 
-<style >
-.img {    
-  /* Styles for the image container */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-.img img {
-  /* Styles for the image */
-  max-width: 25%;
-}
-
+<style scoped>
 div.cadre {
   background-color: #ede4d1;
   color: black;
@@ -91,7 +80,7 @@ div.cadre *::selection {
 }
 
 @media only screen and (max-width: 1300px) {
-  div.cadre, div.contact {
+  div.cadre {
     width: 88%;
   }
 }

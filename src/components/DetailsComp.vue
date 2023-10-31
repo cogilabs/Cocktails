@@ -56,16 +56,15 @@ export default {
 </script>
 
 <style scoped>
-@media only screen and (max-width: 600px) {
   .img {    
     /* Styles for the image container */
     display: flex;
     flex-direction: row;
     justify-content: center;
+    max-width: 33vw;
   }
   img {
     /* Styles for the image */
     max-width: 45%;
   }
-}
 </style>
