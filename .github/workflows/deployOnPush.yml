@@ -21,6 +21,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           remote_folder: ./public_html/cocktails
           cleanup: true
-          include: |
-            .htaccess
+          include: '['.htaccess']'
     
