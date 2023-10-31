@@ -10,7 +10,6 @@ import CardComp from './components/CardComp.vue'
 import DetailsComp from './components/DetailsComp.vue'
 import LegendComp from './components/LegendComp.vue'
 
-
 const routes = [
   { path: '/', component: MainVue },
   { path: '/cocktail/:id', component: CocktailDetails }

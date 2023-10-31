@@ -81,6 +81,7 @@
         <h1 v-show="!this.details.text">Légende</h1>
       </div>
       <div class="detailsDiv">
+        <router-link v-if="details.title" :to="'/cocktail/' + details.title.replace(/ /g,'').toLowerCase()">Voir en plus grand</router-link>
         <transition name="fadeMove">
           <!-- Display cocktail details -->
           <details-comp 
@@ -327,6 +328,13 @@
     color: whitesmoke;
     font-family: Helvetica, Arial, sans-serif;
     margin: 0;
+  }
+  router-view, a {
+  text-decoration: none;
+  color: goldenrod;
+  }
+  router-view:hover, a:hover {
+    text-decoration: underline;
   }
   ::selection {
     /* Disable the ability to select text (at least visually) */

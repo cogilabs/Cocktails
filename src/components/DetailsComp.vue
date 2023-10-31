@@ -3,7 +3,6 @@
     <h1>{{ cocktailName }} <span v-if="cocktailABV">({{ cocktailABV }}%)</span></h1>
     <p class="img"><img v-show="imgUrl" v-bind:src="imgUrl"></p>
     <div v-html="detailsText"></div>
-    <router-link :to="'/cocktail/' + cocktailName">View Details</router-link>
   </div>
 </template>
 
@@ -28,7 +27,6 @@ export default {
     async loadImage() {
       try {
         const imageUrl = await this.getImageUrl(this.cocktailName);
-        console.log(imageUrl)
         this.imgUrl = imageUrl;
       } catch (error) {
         console.error('Error loading image:', error);
@@ -58,6 +56,7 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (max-width: 600px) {
   .img {    
     /* Styles for the image container */
     display: flex;
@@ -68,4 +67,5 @@ export default {
     /* Styles for the image */
     max-width: 45%;
   }
+}
 </style>
