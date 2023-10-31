@@ -67,4 +67,10 @@ export default {
     /* Styles for the image */
     max-width: 45%;
   }
+
+@media only screen and (max-width: 1300px) {
+  .img {
+    max-width: 100vw;
+  }
+}
 </style>
