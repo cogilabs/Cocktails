@@ -69,7 +69,7 @@ div.cadre {
   margin-left: auto;
   margin-right: auto;
 }
-div.cadre *::selection {
+div.cadre ::selection {
   background: goldenrod;
 }
 
