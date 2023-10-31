@@ -14,6 +14,10 @@ export default {
       imgUrl: null,
     };
   },
+  created() {
+    // Load the image when component updates
+    this.loadImage();
+  },
   updated() {
     // Load the image when component updates
     this.loadImage();
@@ -32,7 +36,7 @@ export default {
     async getImageUrl(cocktailId) {
       if (cocktailId === "") return null;
       const loadImage = async (imageType) => {
-        const response = await fetch(`images/cocktails/${cocktailId}.${imageType}`);
+        const response = await fetch(`/images/cocktails/${cocktailId}.${imageType}`);
         if (response.status === 200) {
           return response.url;
         }
@@ -52,6 +56,7 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (max-width: 600px) {
   .img {    
     /* Styles for the image container */
     display: flex;
@@ -62,4 +67,5 @@ export default {
     /* Styles for the image */
     max-width: 45%;
   }
+}
 </style>
