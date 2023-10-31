@@ -1,6 +1,11 @@
 # Cogilabs Cocktails
-
 [→ In English](/README.md)
+
+<p align="center">
+    <a href="https://nodejs.org/" target="_blank"><img alt="Badge Node.js" title="Utilise Node.js !" src="https://img.shields.io/badge/node.js-233056?style=for-the-badge&logo=node.js&logoColor=white"/></a>
+    <a href="https://vuejs.org/" target="_blank"><img alt="Badge Vue.js" title="Utilise Vue.js !" src="https://img.shields.io/badge/vue.js-%234FC08D.svg?&style=for-the-badge&logo=vue.js&logoColor=white" /></a>
+</p>
+
 
 ## ⚠️ Avertissement : Développement en Cours ⚠️
 

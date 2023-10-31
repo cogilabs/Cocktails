@@ -2,6 +2,11 @@
 
 [→ En Français](/localizedReadme/README-fr.md)
 
+<p align="center">
+    <a href="https://nodejs.org/" target="_blank"><img alt="Node.js badge" title="Using Node.js!" src="https://img.shields.io/badge/node.js-233056?style=for-the-badge&logo=node.js&logoColor=white"/></a>
+    <a href="https://vuejs.org/" target="_blank"><img alt="Vue.js badge" title="Using Vue.js!" src="https://img.shields.io/badge/vue.js-%234FC08D.svg?&style=for-the-badge&logo=vue.js&logoColor=white" /></a>
+</p>
+
 ## ⚠️ Warning: Work in Progress ⚠️
 
 **Cogilabs Cocktails** is an ongoing project designed to help me learn Vue.js while also serving as a practical cocktail recipe application.
