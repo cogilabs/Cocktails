@@ -1,14 +1,16 @@
 <template>
   <div class="cadre">
-    <div v-if="cocktail">
     <router-link :to="'/'">Retour à l'application</router-link>
-      <div>
-        <details-comp 
-            :cocktailName="cocktail.name"
-            :cocktailABV="cocktail.abv"
-            :detailsText="cocktail.description"
-          />
-      </div>
+    <div v-if="cocktail">
+      <details-comp 
+          :cocktailName="cocktail.name"
+          :cocktailABV="cocktail.abv"
+          :detailsText="cocktail.description"
+        />
+    </div>
+    <div v-if="!cocktail">
+      <h2>Oups !</h2>
+      <p>Le cocktail "{{ $route.params.id }}" n'existe pas !</p>
     </div>
   </div>
 </template>
