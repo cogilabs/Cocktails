@@ -22,5 +22,4 @@ jobs:
           local_folder: dist
           remote_folder: ./public_html/cocktails
           cleanup: true
-          include: '[".htaccess"]'
     
