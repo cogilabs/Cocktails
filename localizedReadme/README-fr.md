@@ -13,7 +13,6 @@
 - [Démo](#démo)
 - [Fonctionnalités](#fonctionnalités)
 - [Pour Commencer](#pour-commencer)
-- [Contribuer](#contribuer)
 - [Licence](#licence)
 
 ## Introduction
