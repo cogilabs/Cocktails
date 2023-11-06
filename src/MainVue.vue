@@ -548,7 +548,7 @@
   @media only screen and (max-width: 600px) {
     .ingColumn, .cocktailColumn {
       width: 100%;
-      height: 33%;
+      height: 45%;
     }
     .detailsColumn {
       width: 100%;
