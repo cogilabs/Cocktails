@@ -1,6 +1,6 @@
 {
   "Mojito": {
-    "description": "Pour préparer un Mojito, vous aurez besoin de :</br></br> - Rhum blanc</br> - Citron vert</br> - Sucre brun</br> - Feuilles de menthe</br> - Glace pilée</br> - Eau gazeuse",
+    "description": "Pour préparer un Mojito, vous aurez besoin de :</br></br> - Rhum blanc</br> - Citron vert</br> - Sucre brun</br> - Feuilles de menthe</br> - Glace pilée</br> - Eau gazeuse",
     "abv": "18.75",
     "ingredients": [
       "Rhum blanc", 
@@ -11,7 +11,7 @@
     ]
   },
   "Mademoiselle": {
-    "description": "Pour préparer un Mademoiselle, vous aurez besoin de :</br></br> - Rhum arrangé</br> - Liqueur de grenade</br> - Liqueur de fleur de sureau</br> - Bitter cerise",
+    "description": "Pour préparer un Mademoiselle, vous aurez besoin de :</br></br> - Rhum arrangé</br> - Liqueur de grenade</br> - Liqueur de fleur de sureau</br> - Bitter cerise",
     "abv": "",
     "ingredients": [
       "Rhum arrangé", 
@@ -21,7 +21,7 @@
     ]
   },
   "Aloha vanille": {
-    "description": "Pour préparer un Aloha vanille, vous aurez besoin de :</br></br> - Rhum ambré</br> - Jus d'orange</br> - Jus d'ananas</br> - Lait de coco</br> - Boule de glace vanille</br> - Jus de citron",
+    "description": "Pour préparer un Aloha vanille, vous aurez besoin de :</br></br> - Rhum ambré</br> - Jus d'orange</br> - Jus d'ananas</br> - Lait de coco</br> - Boule de glace vanille</br> - Jus de citron",
     "abv": "",
     "ingredients": [
       "Rhum ambré", 
@@ -33,7 +33,7 @@
     ]
   },
   "Mai Tai": {
-    "description": "Préparez un Mai Tai avec ces ingrédients :</br></br> - Rhum blanc</br> - Rhum brun</br> - Jus de citron vert</br> - Sirop d'orgeat</br> - Liqueur d'orange</br> - Brin de menthe (pour la garniture)",
+    "description": "Préparez un Mai Tai avec ces ingrédients :</br></br> - Rhum blanc</br> - Rhum brun</br> - Jus de citron vert</br> - Sirop d'orgeat</br> - Liqueur d'orange</br> - Brin de menthe (pour la garniture)",
     "abv": "17.5",
     "ingredients": [
       "Rhum blanc",
@@ -45,7 +45,7 @@
     ]
   },
   "Whiskey in the jar": {
-    "description": "Pour préparer un Whiskey in the jar, vous aurez besoin de :</br></br> - Whiskey Bushmills</br> - Pêche mûre <i>ou</i> jus de pêche concentré</br> - Sucre en poudre <i>ou</i> Sirop de pêche</br> - Feuilles de menthe",
+    "description": "Pour préparer un Whiskey in the jar, vous aurez besoin de :</br></br> - Whiskey Bushmills</br> - Pêche mûre <i>ou</i> jus de pêche concentré</br> - Sucre en poudre <i>ou</i> Sirop de pêche</br> - Feuilles de menthe",
     "abv": "22.5",
     "ingredients": [
       "Whiskey Bushmills", 
@@ -57,7 +57,7 @@
     ]
   },
   "Elevenses": {
-    "description": "Pour préparer un Elevenses, vous aurez besoin de :</br></br> - Whiskey Tullamore</br> - Confiture de framboises</br> - Jus de citron</br> - Thé Irish breakfast",
+    "description": "Pour préparer un Elevenses, vous aurez besoin de :</br></br> - Whiskey Tullamore</br> - Confiture de framboises</br> - Jus de citron</br> - Thé Irish breakfast",
     "abv": "12.5",
     "ingredients": [
       "Whiskey Tullamore", 
@@ -67,7 +67,7 @@
     ]
   },
   "Wapplesky": {
-    "description": "Pour préparer un Wapplesky, vous aurez besoin de :</br></br> - Whiskey écossais</br> - Jus de pomme</br> - Sirop de miel</br> - Angostura orange bitter",
+    "description": "Pour préparer un Wapplesky, vous aurez besoin de :</br></br> - Whiskey écossais</br> - Jus de pomme</br> - Sirop de miel</br> - Angostura orange bitter",
     "abv": "",
     "ingredients": [
       "Whiskey écossais", 
@@ -77,7 +77,7 @@
     ]
   },
   "Lynchburg Lemonade": {
-    "description": "Pour préparer une Lynchburg Lemonade, vous aurez besoin de :</br></br> - Whiskey Jack Daniel's</br> - Jus de citron</br> - Sirop de sucre de canne</br> - Limonade",
+    "description": "Pour préparer une Lynchburg Lemonade, vous aurez besoin de :</br></br> - Whiskey Jack Daniel's</br> - Jus de citron</br> - Sirop de sucre de canne</br> - Limonade",
     "abv": "12.5",
     "ingredients": [
       "Whiskey Jack Daniel's", 
@@ -87,7 +87,7 @@
     ]
   },
   "Sex on the beach": {
-    "description": "Pour préparer un Sex on the Beach, vous aurez besoin de :</br></br> - Vodka</br> - Jus d'orange</br> - Jus de cranberry</br> - Schnaps</br> - Orange",
+    "description": "Pour préparer un Sex on the Beach, vous aurez besoin de :</br></br> - Vodka</br> - Jus d'orange</br> - Jus de cranberry</br> - Schnaps</br> - Orange",
     "abv": "12.5",
     "ingredients": [
       "Vodka", 
@@ -98,7 +98,7 @@
     ]
   },
   "Frescesa": {
-    "description": "Pour préparer une Frescesa, vous aurez besoin de :</br></br> - Vodka</br> - Citron vert</br> - Pêche</br> - Vanille</br> - Menthe",
+    "description": "Pour préparer une Frescesa, vous aurez besoin de :</br></br> - Vodka</br> - Citron vert</br> - Pêche</br> - Vanille</br> - Menthe",
     "abv": "11.5",
     "ingredients": [
       "Vodka", 
@@ -109,7 +109,7 @@
     ]
   },
   "Russe Blanche": {
-    "description": "Pour préparer une Russe Blanche, vous aurez besoin de :</br></br> - Vodka</br> - Liqueur de café</br> - Crème liquide entière",
+    "description": "Pour préparer une Russe Blanche, vous aurez besoin de :</br></br> - Vodka</br> - Liqueur de café</br> - Crème liquide entière",
     "abv": "17.5",
     "ingredients": [
       "Vodka", 
@@ -118,7 +118,7 @@
     ]
   },
   "Vodka de Noël": {
-    "description": "Pour préparer une Vodka de Noël, vous aurez besoin de :</br></br> - Vodka</br> - Liqueur de café</br> - Coca</br> - Crème liquide",
+    "description": "Pour préparer une Vodka de Noël, vous aurez besoin de :</br></br> - Vodka</br> - Liqueur de café</br> - Coca</br> - Crème liquide",
     "abv": "",
     "ingredients": [
       "Vodka", 
@@ -128,7 +128,7 @@
     ]
   },
   "Margarita": {
-    "description": "Pour préparer une Margarita, vous aurez besoin de :</br></br> - Tequila</br> - Jus de citron vert</br> - Triple sec</br> - Sel</br> - Glaçons",
+    "description": "Pour préparer une Margarita, vous aurez besoin de :</br></br> - Tequila</br> - Jus de citron vert</br> - Triple sec</br> - Sel</br> - Glaçons",
     "abv": "14.5",
     "ingredients": [
       "Tequila",
@@ -138,7 +138,7 @@
     ]
   },
   "Daiquiri": {
-    "description": "Pour préparer un Daiquiri, vous aurez besoin de :</br></br> - Rhum blanc</br> - Jus de citron</br> - Sucre",
+    "description": "Pour préparer un Daiquiri, vous aurez besoin de :</br></br> - Rhum blanc</br> - Jus de citron</br> - Sucre",
     "abv": "14.5",
     "ingredients": [
       "Rhum blanc",
@@ -147,7 +147,7 @@
     ]
   },
   "Mule de Moscou": {
-    "description": "Pour préparer une Mule de Moscou, vous aurez besoin de :</br></br> - Vodka</br> - Jus de citron</br> - Ginger beer</br> - Glaçons</br> - Tranches de citron vert",
+    "description": "Pour préparer une Mule de Moscou, vous aurez besoin de :</br></br> - Vodka</br> - Jus de citron</br> - Ginger beer</br> - Glaçons</br> - Tranches de citron vert",
     "abv": "11.5",
     "ingredients": [
       "Vodka",
@@ -157,7 +157,7 @@
     ]
   },
   "Pisco Sour": {
-    "description": "Pour préparer un Pisco Sour, vous aurez besoin de :</br></br> - Pisco</br> - Jus de citron</br> - Blanc d'œuf</br> - Sirop de sucre</br> - Angostura bitter",
+    "description": "Pour préparer un Pisco Sour, vous aurez besoin de :</br></br> - Pisco</br> - Jus de citron</br> - Blanc d'œuf</br> - Sirop de sucre</br> - Angostura bitter",
     "abv": "14",
     "ingredients": [
       "Pisco",
@@ -168,7 +168,7 @@
     ]
   },
   "Cosmopolitan": {
-    "description": "Pour préparer un Cosmopolitan, vous aurez besoin de :</br></br> - Vodka</br> - Triple sec</br> - Jus de canneberge</br> - Jus de citron vert</br> - Zeste d'orange (pour la garniture)",
+    "description": "Pour préparer un Cosmopolitan, vous aurez besoin de :</br></br> - Vodka</br> - Triple sec</br> - Jus de canneberge</br> - Jus de citron vert</br> - Zeste d'orange (pour la garniture)",
     "abv": "14.5",
     "ingredients": [
       "Vodka",
@@ -179,7 +179,7 @@
     ]
   },
   "Bloody Mary": {
-    "description": "Pour préparer un Bloody Mary, rassemblez ces ingrédients :</br></br> - Vodka</br> - Jus de tomate</br> - Jus de citron</br> - Sauce Worcestershire</br> - Sauce piquante</br> - Céleri, olives et cornichons (pour la garniture)",
+    "description": "Pour préparer un Bloody Mary, rassemblez ces ingrédients :</br></br> - Vodka</br> - Jus de tomate</br> - Jus de citron</br> - Sauce Worcestershire</br> - Sauce piquante</br> - Céleri, olives et cornichons (pour la garniture)",
     "abv": "14.5",
     "ingredients": [
       "Vodka",
@@ -193,7 +193,7 @@
     ]
   },
   "Piña Colada": {
-    "description": "Pour une Piña Colada, vous aurez besoin de :</br></br> - Rhum blanc</br> - Rhum ambré VO</br> - Crème de coco</br> - Jus d'ananas</br> - Tranche d'ananas (pour la garniture)",
+    "description": "Pour une Piña Colada, vous aurez besoin de :</br></br> - Rhum blanc</br> - Rhum ambré VO</br> - Crème de coco</br> - Jus d'ananas</br> - Tranche d'ananas (pour la garniture)",
     "abv": "14.5",
     "ingredients": [
       "Rhum blanc",
@@ -204,7 +204,7 @@
     ]
   },
   "Screwdriver": {
-    "description": "Un Screwdriver se réalise avec :</br></br> - Vodka</br> - Jus d'orange</br> - Tranche d'orange (pour la garniture)",
+    "description": "Un Screwdriver se réalise avec :</br></br> - Vodka</br> - Jus d'orange</br> - Tranche d'orange (pour la garniture)",
     "abv": "7",
     "ingredients": [
       "Vodka",
@@ -213,7 +213,7 @@
     ]
   },
   "Mojito Framboise": {
-    "description": "Pour un Mojito Framboise, vous aurez besoin de :</br></br> - Rhum blanc</br> - Framboises fraîches</br> - Jus de citron vert</br> - Feuilles de menthe</br> - Sucre de canne</br> - Eau gazeuse",
+    "description": "Pour un Mojito Framboise, vous aurez besoin de :</br></br> - Rhum blanc</br> - Framboises fraîches</br> - Jus de citron vert</br> - Feuilles de menthe</br> - Sucre de canne</br> - Eau gazeuse",
     "abv": "11.5",
     "ingredients": [
       "Rhum blanc",
@@ -225,7 +225,7 @@
     ]
   },
   "Tequila Sunrise": {
-    "description": "Pour préparer un Tequila Sunrise, rassemblez ces ingrédients :</br></br> - Tequila</br> - Jus d'orange</br> - Sirop de grenadine</br> - Glaçons</br> - Tranche d'orange (pour la garniture)",
+    "description": "Pour préparer un Tequila Sunrise, rassemblez ces ingrédients :</br></br> - Tequila</br> - Jus d'orange</br> - Sirop de grenadine</br> - Glaçons</br> - Tranche d'orange (pour la garniture)",
     "abv": "14.5",
     "ingredients": [
       "Tequila",
@@ -235,7 +235,7 @@
     ]
   },
   "Mango Mojito": {
-    "description": "Pour préparer un Mango Mojito, rassemblez ces ingrédients :</br></br> - Rhum blanc</br> - Mang fraiche (pour la garniture)</br> - Jus de citron vert</br> - Feuilles de menthe</br> - Eau gazeuse",
+    "description": "Pour préparer un Mango Mojito, rassemblez ces ingrédients :</br></br> - Rhum blanc</br> - Mang fraiche (pour la garniture)</br> - Jus de citron vert</br> - Feuilles de menthe</br> - Eau gazeuse",
     "abv": "11.5",
     "ingredients": [
       "Rhum blanc",
@@ -246,7 +246,7 @@
     ]
   },
   "Radioactive Long Island Iced Tea": {
-    "description": "Pour préparer un Radioactive Long Island Iced Tea, rassemblez ces ingrédients :</br></br> - Rhum blanc</br> - Mang fraiche (pour la garniture)</br> - Jus de citron vert</br> - Feuilles de menthe</br> - Eau gazeuse",
+    "description": "Pour préparer un Radioactive Long Island Iced Tea, rassemblez ces ingrédients :</br></br> - Rhum blanc</br> - Mang fraiche (pour la garniture)</br> - Jus de citron vert</br> - Feuilles de menthe</br> - Eau gazeuse",
     "abv": "20",
     "ingredients": [
       "Rhum blanc",
