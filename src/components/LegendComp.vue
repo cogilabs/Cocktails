@@ -70,9 +70,6 @@
   /*=========== Tablet/landscape phone design ============*/
 
   @media only screen and (max-width: 1000px) {
-    *::selection {
-      background: #00000000;
-    }
     div {
       padding: 0;
     }

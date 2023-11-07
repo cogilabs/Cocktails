@@ -328,6 +328,8 @@
     color: whitesmoke;
     font-family: Helvetica, Arial, sans-serif;
     margin: 0;
+    /* Disable the ability to select text */
+    user-select: none;
   }
   router-view, a {
   text-decoration: none;
@@ -335,10 +337,6 @@
   }
   router-view:hover, a:hover {
     text-decoration: underline;
-  }
-  ::selection {
-    /* Disable the ability to select text (at least visually) */
-    background: #00000000;
   }
   .sectionTitle {
     /* Styles for section titles */
@@ -425,6 +423,7 @@
   }
   .detailsDiv * {
     width: 30vw;
+    user-select: text;
   }
   .detailsDiv:hover {
     cursor: auto;
@@ -433,17 +432,16 @@
     background: goldenrod;
     color: black;
   }
-  .legend *::selection {
-    background: #00000000;
-    color: unset;
+  .legend * {
+    user-select: none;
   }
   input {
     height: fit-content;
     width: 30vw;
-    margin-top: 10px
+    margin-top: 10px;
+    user-select: text;
   }
   input::selection {
-    /* Reenable the ability to select text for input boxes */
     background: lightsteelblue;
   }
   .uncheckBtn {

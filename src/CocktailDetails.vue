@@ -68,6 +68,7 @@ div.cadre {
   margin-top: 5vh;
   margin-left: auto;
   margin-right: auto;
+  user-select: text;
 }
 div.cadre ::selection {
   background: goldenrod;
